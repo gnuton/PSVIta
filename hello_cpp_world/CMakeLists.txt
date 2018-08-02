@@ -38,12 +38,14 @@ set(VITA_MKSFOEX_FLAGS "${VITA_MKSFOEX_FLAGS} -d PARENTAL_LEVEL=1")
 
 # Add any additional include paths here
 include_directories(
+    libs/debugscreen/
 )
 
 # Add any additional library paths here
 # ${CMAKE_CURRENT_BINARY_DIR} lets you use any library currently being built
 link_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
+  libs/debugscreen/
 )
 
 ## Build and link
@@ -53,9 +55,9 @@ add_executable(hello_cpp_world
 )
 
 # Library to link to (drop the -l prefix). This will mostly be stubs.
-target_link_libraries(hello_cpp_world
-  SceLibKernel_stub # this line is only for demonstration. It's not needed as 
-                    # the most common stubs are automatically included.
+target_link_libraries(
+    hello_cpp_world
+    SceDisplay_stub
 )
 
 ## Create Vita files
