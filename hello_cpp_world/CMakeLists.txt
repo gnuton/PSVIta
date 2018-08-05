@@ -38,14 +38,14 @@ set(VITA_MKSFOEX_FLAGS "${VITA_MKSFOEX_FLAGS} -d PARENTAL_LEVEL=1")
 
 # Add any additional include paths here
 include_directories(
-    libs/debugscreen/
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/libs/debugscreen/
 )
 
 # Add any additional library paths here
 # ${CMAKE_CURRENT_BINARY_DIR} lets you use any library currently being built
 link_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
-  libs/debugscreen/
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/libs/debugscreen/
 )
 
 ## Build and link
