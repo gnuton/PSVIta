@@ -1,4 +1,3 @@
-## This file is a quick tutorial on writing CMakeLists for targeting the Vita
 cmake_minimum_required(VERSION 2.8)
 
 ## This includes the Vita toolchain, must go before project definition
@@ -15,7 +14,9 @@ endif()
 
 ## Define project parameters here
 # Name of the project
-project(hello_cpp_world)
+set(SHORT_NAME hello_cpp_world)
+project(${SHORT_NAME})
+
 # This line adds Vita helper macros, must go after project definition in order 
 # to build Vita specific artifacts (self/vpk).
 include("${VITASDK}/share/vita.cmake" REQUIRED)
@@ -28,6 +29,7 @@ set(VITA_APP_NAME "Hello World")
 set(VITA_TITLEID  "VSDK00005")
 # Optional version string to show in LiveArea's more info screen
 set(VITA_VERSION  "01.00")
+option(DEBUGNET "Enable debugnet for logging" ON)
 
 ## Flags and includes for building
 # Note that we make sure not to overwrite previous flags
@@ -38,33 +40,51 @@ set(VITA_MKSFOEX_FLAGS "${VITA_MKSFOEX_FLAGS} -d PARENTAL_LEVEL=1")
 
 # Add any additional include paths here
 include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/libs/debugscreen/
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/libs/gui/
 )
 
 # Add any additional library paths here
 # ${CMAKE_CURRENT_BINARY_DIR} lets you use any library currently being built
 link_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/libs/debugscreen/
+  ${CMAKE_CURRENT_BINARY_DIR}/src/libs/gui/
 )
 
 ## Build and link
 # Add all the files needed to compile here
-add_executable(hello_cpp_world
-  src/main.cpp
+file(GLOB_RECURSE PROJECT_SOURCE_FILES "src/*.h" "src/*.hpp" "src/*.cpp" "src/*.c")
+add_executable(${SHORT_NAME}
+  ${PROJECT_RESOURCES}
+  ${PROJECT_SOURCE_FILES}
 )
+
+if(DEBUGNET)
+  add_definitions(-DDEBUGNET)
+  target_link_libraries(${SHORT_NAME} debugnet)
+  file(STRINGS "debugnetip.txt" DEBUGNETIP)
+  add_definitions(-DDEBUGNETIP="${DEBUGNETIP}")
+endif()
 
 # Library to link to (drop the -l prefix). This will mostly be stubs.
 target_link_libraries(
-    hello_cpp_world
-    SceDisplay_stub
+    ${SHORT_NAME}
+    vita2d
+    SceDisplay_stub # Required by: vita2d
+    SceGxm_stub # Required by: vita2d
+    SceCommonDialog_stub # Required by: vita2d
+    SceSysmodule_stub # Required by: vita2d
+    SceTouch_stub
+    SceCtrl_stub
+    png
+    jpeg
+    z # required by png for crc32
 )
 
-## Create Vita files
-vita_create_self(hello_cpp_world.self hello_cpp_world)
-# The FILE directive lets you add additional files to the VPK, the syntax is 
+
+vita_create_self(${SHORT_NAME}.self ${SHORT_NAME})
+# The FILE directive lets you add additional files to the VPK, the syntax is
 # FILE src_path dst_path_in_vpk. In this case, we add the LiveArea paths.
-vita_create_vpk(hello_cpp_world.vpk ${VITA_TITLEID} hello_cpp_world.self
+vita_create_vpk (${SHORT_NAME}.vpk ${VITA_TITLEID} ${SHORT_NAME}.self
   VERSION ${VITA_VERSION}
   NAME ${VITA_APP_NAME}
   FILE sce_sys/icon0.png sce_sys/icon0.png
@@ -72,3 +92,4 @@ vita_create_vpk(hello_cpp_world.vpk ${VITA_TITLEID} hello_cpp_world.self
   FILE sce_sys/livearea/contents/startup.png sce_sys/livearea/contents/startup.png
   FILE sce_sys/livearea/contents/template.xml sce_sys/livearea/contents/template.xml
 )
+
