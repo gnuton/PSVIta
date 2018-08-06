@@ -52,6 +52,28 @@ link_directories(
 
 ## Build and link
 # Add all the files needed to compile here
+
+FUNCTION(ADD_RESOURCES out_var)
+  SET(result)
+  FOREACH(in_f ${ARGN})
+    SET(out_f "${CMAKE_CURRENT_BINARY_DIR}/${in_f}.o")
+    GET_FILENAME_COMPONENT(out_dir ${out_f} DIRECTORY)
+    ADD_CUSTOM_COMMAND(OUTPUT ${out_f}
+      COMMAND ${CMAKE_COMMAND} -E make_directory ${out_dir}
+      COMMAND ${CMAKE_LINKER} -r -b binary -o ${out_f} ${in_f}
+      DEPENDS ${in_f}
+      WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+      COMMENT "Building resource ${out_f}"
+      VERBATIM
+      )
+    LIST(APPEND result ${out_f})
+  ENDFOREACH()
+  SET(${out_var} "${result}" PARENT_SCOPE)
+ENDFUNCTION()
+
+file(GLOB_RECURSE res_files RELATIVE ${CMAKE_SOURCE_DIR} assets/*.png assets/*.jpeg assets/*.yml assets/*.ttf assets/*.wav assets/*.ogg)
+add_resources(PROJECT_RESOURCES ${res_files})
+
 file(GLOB_RECURSE PROJECT_SOURCE_FILES "src/*.h" "src/*.hpp" "src/*.cpp" "src/*.c")
 add_executable(${SHORT_NAME}
   ${PROJECT_RESOURCES}
