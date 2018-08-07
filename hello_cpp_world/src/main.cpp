@@ -7,8 +7,10 @@
 #include "app.h"
 
 int main(int argc, char *argv[]) {
-  App();
-  sceKernelDelayThread(20*1000*1000);
-  sceKernelExitProcess(0);
+  auto app = App();
+  app.dbgInit();
+  app.start();
+
+  //sceKernelDelayThread(20*1000*1000);
   return 0;
 }
