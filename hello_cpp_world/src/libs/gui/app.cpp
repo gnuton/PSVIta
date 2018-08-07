@@ -2,18 +2,16 @@
 #include <vita2d.h>
 #include "Views/splash.h"
 #include "input.h"
-#include "debug.h"
 
 App::App(){
-    dbg_printf(DBG_DEBUG, "Initializing app");
-
+    this->logger.log(logger.debug, "Initializing App");
     vita2d_init();
     vita2d_set_clear_color(RGBA8(0x40, 0x40, 0x40, 0xFF));
     this->activity = Activity::create_instance();
 }
 
 App::~App(){
-    dbg_printf(DBG_DEBUG, "Destroying App");
+    this->logger.log(logger.debug, "Destroying App");
     this->activity->FlushQueue();
     delete this->activity;
     this->activity = NULL;
@@ -21,7 +19,7 @@ App::~App(){
 }
 
 void App::start(){
-    dbg_printf(DBG_DEBUG, "Starting main loop");
+    this->logger.log(logger.debug, "Starting main loop");
     Input input;
     this->showSplashScreen();
 
@@ -41,12 +39,8 @@ void App::start(){
     }
 }
 
-void App::dbgInit(){
-    dbg_init();
-}
-
 void App::showSplashScreen(){
-    dbg_printf(DBG_DEBUG, "Showing splash screen");
+    this->logger.log(logger.debug, "Showing splash screen");
 
     auto splash = std::make_shared<Splash>();
     splash->priority = 200;

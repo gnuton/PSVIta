@@ -44,11 +44,11 @@
 #include <psp2/system_param.h>
 
 //#include "utils.h"
-
+/*
 #ifdef DEBUGNET
 #include <debugnet.h>
 #endif
-
+*/
 #include <vita2d.h>
 
 #include <yaml-cpp/yaml.h>

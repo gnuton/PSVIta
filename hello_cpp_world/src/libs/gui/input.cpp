@@ -3,7 +3,6 @@
 #include "screen.h"
 #include "touch.h"
 #include "utils.h"
-#include "debug.h"
 
 Input::Input()
 {
@@ -138,8 +137,8 @@ int Input::TouchInRectangle(const Rectangle &rect) const
 	double touchX, touchY;
 	TouchCoordinates(&touchX, &touchY);
 
-	dbg_printf(DBG_DEBUG, "TouchInRectangle rectangle: %f,%f:%f,%f", rect.topLeft.x, rect.topLeft.y, rect.bottomRight.x, rect.bottomRight.y);
-	dbg_printf(DBG_DEBUG, "TouchInRectangle touch: %f,%f", touchX, touchY);
+        //dbg_printf(DBG_DEBUG, "TouchInRectangle rectangle: %f,%f:%f,%f", rect.topLeft.x, rect.topLeft.y, rect.bottomRight.x, rect.bottomRight.y);
+        //dbg_printf(DBG_DEBUG, "TouchInRectangle touch: %f,%f", touchX, touchY);
 
 	return rect.Inside(Point(touchX, touchY));
 }

@@ -1,11 +1,13 @@
 #include "activity.h"
+#include "logger.h"
 
 class App {
+    Logger logger;
+
 public:
     App();
     virtual ~App();
     void start();
-    void dbgInit();
 
 private:
     void showSplashScreen();

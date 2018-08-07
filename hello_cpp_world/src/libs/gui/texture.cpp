@@ -1,5 +1,4 @@
 #include "texture.h"
-#include "debug.h"
 
 // TODO Use polymorphism instead of duplicated class
 
@@ -11,7 +10,7 @@ std::unordered_map<unsigned char *, std::shared_ptr<vita2d_texture>> Texture::te
 
 void DeleteTexture(vita2d_texture* tex)
 {
-	dbg_printf(DBG_DEBUG, "Destroying texture...");
+        //dbg_printf(DBG_DEBUG, "Destroying texture...");
 	vita2d_free_texture(tex);
 }
 
@@ -55,8 +54,8 @@ Texture::Texture(const std::string &path, bool caching) :
 	if (!texture) texture = std::make_shared(vita2d_load_BMP_file(path.c_str()));
 
 	if (!texture) {
-		dbg_printf(DBG_ERROR, "Couldn't load texture %s", path.c_str());
-        m_status = FAILED;
+                //dbg_printf(DBG_ERROR, "Couldn't load texture %s", path.c_str());
+                m_status = FAILED;
 		return;
 	}
 
