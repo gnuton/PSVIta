@@ -4,14 +4,15 @@
 #include "input.h"
 
 App::App(){
-    this->logger.log(logger.debug, "Initializing App");
     vita2d_init();
     vita2d_set_clear_color(RGBA8(0x40, 0x40, 0x40, 0xFF));
     this->activity = Activity::create_instance();
+    this->logger = Logger::create_instance();
+    this->logger->log(debug, "Initializing App");
 }
 
 App::~App(){
-    this->logger.log(logger.debug, "Destroying App");
+    this->logger->log(LoggerFormat::debug, "Destroying App");
     this->activity->FlushQueue();
     delete this->activity;
     this->activity = NULL;
@@ -19,7 +20,7 @@ App::~App(){
 }
 
 void App::start(){
-    this->logger.log(logger.debug, "Starting main loop");
+    this->logger->log(LoggerFormat::debug, "Starting main loop");
     Input input;
     this->showSplashScreen();
 
@@ -40,7 +41,7 @@ void App::start(){
 }
 
 void App::showSplashScreen(){
-    this->logger.log(logger.debug, "Showing splash screen");
+    this->logger->log(LoggerFormat::debug, "Showing splash screen");
 
     auto splash = std::make_shared<Splash>();
     splash->priority = 200;

@@ -2,7 +2,7 @@
 #include "logger.h"
 
 class App {
-    Logger logger;
+
 
 public:
     App();
@@ -13,5 +13,6 @@ private:
     void showSplashScreen();
 
     Activity *activity;
+    Logger *logger;
 };
 

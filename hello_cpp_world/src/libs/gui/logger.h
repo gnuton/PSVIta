@@ -3,30 +3,28 @@
 
 #include <string>
 #include <map>
+#include "singleton.h"
 
-class Logger
-{
+enum LoggerFormat { debug, info, warning, error };
+class Logger: public Singleton<Logger> {
+    friend class Singleton<Logger>;
+    Logger();
 public:
-    enum Format { debug, info, warning, error };
+    virtual ~Logger();
 
 private:
     const unsigned short maxBufferSize = 512;
 
-    std::map<Format, const char*> FormatToStr = {
-        {Format::debug, "[DEBUG] "},
-        {Format::info, "[INFO] "},
-        {Format::warning, "[WARN] "},
-        {Format::error, "[ERROR] "}
+    std::map<LoggerFormat, const char*> FormatToStr = {
+        {LoggerFormat::debug, "[DEBUG] "},
+        {LoggerFormat::info, "[INFO] "},
+        {LoggerFormat::warning, "[WARN] "},
+        {LoggerFormat::error, "[ERROR] "}
     };
+
+
 public:
-    Logger();
-    virtual ~Logger();
-
-    void log(Format f, const std::string& msg);
-
-
-
-
+    void log(LoggerFormat f, const std::string& msg);
 };
 
 #endif // LOGGER_H
