@@ -85,6 +85,7 @@ if(DEBUGNET)
   target_link_libraries(${SHORT_NAME} debugnet)
   file(STRINGS "debugnetip.txt" DEBUGNETIP)
   add_definitions(-DDEBUGNETIP="${DEBUGNETIP}")
+  message("++ DEBUGNET is on. Your app will be sending msg to ${DEBUGNETIP}.")
 endif()
 
 # Library to link to (drop the -l prefix). This will mostly be stubs.
@@ -100,6 +101,8 @@ target_link_libraries(
     png
     jpeg
     z # required by png for crc32
+    SceNet_stub
+    SceNetCtl_stub
 )
 
 

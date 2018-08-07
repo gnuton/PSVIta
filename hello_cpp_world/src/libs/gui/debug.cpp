@@ -1,18 +1,17 @@
 #include <global_include.h>
+#include "debug.h"
 
-#ifdef _DEBUG
+#ifdef DEBUGNET
 
 int dbg_init()
 {
-	#ifdef DEBUGNET
 	debugNetInit(DEBUGNETIP, 18194, 3);
-	#endif
-
 	return 0;
 }
 
 int _dbg_printf(int level, const char *format, ...)
 {
+        return 0;
 	va_list args;
 	va_start(args, format);
 
@@ -36,11 +35,7 @@ int _dbg_printf(int level, const char *format, ...)
 	vsnprintf(buf2, 512, buf1, args);
 	
 	va_end(args);
-
-	#ifdef DEBUGNET
 	debugNetUDPSend(buf2);
-	#endif
-
 	return 0;
 }
 
