@@ -1,4 +1,6 @@
 #include "app.h"
+#include <psp2/kernel/processmgr.h>
+#include <psp2/display.h>
 #include <vita2d.h>
 #include "Views/splash.h"
 #include "input.h"

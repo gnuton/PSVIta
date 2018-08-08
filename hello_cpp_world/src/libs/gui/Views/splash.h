@@ -1,9 +1,10 @@
-#pragma once
+#ifndef SPLASH_H
+#define SPLASH_H
 
-#include <global_include.h>
-
-#include "View.h"
 #include <texture.h>
+#include "View.h"
+
+#pragma once
 
 typedef enum {
 	STEP_FADING_IN,
@@ -26,3 +27,4 @@ private:
 	Texture vhbb_splash;
 	Texture gekihen_splash;
 };
+#endif

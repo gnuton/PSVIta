@@ -1,4 +1,5 @@
 #include "splash.h"
+
 #include <texture.h>
 #include <algorithm>
 

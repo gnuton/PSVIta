@@ -1,3 +1,6 @@
+#ifndef VIEW_H
+#define VIEW_H
+
 #pragma once
 
 #include <input.h>
@@ -14,3 +17,4 @@ public:
 	bool request_destroy = false;
 	unsigned int priority = 100;
 };
+#endif
