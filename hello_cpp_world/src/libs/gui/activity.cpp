@@ -27,9 +27,9 @@ int Activity::HandleInput(int focus, const Input& input)
     views_.back()->HandleInput(focus, input);
 
     views_.erase(
-        std::remove_if(views_.begin(), views_.end(),
-            [](const std::shared_ptr<View> &view) { return view->request_destroy; }),
-    views_.end());
+                std::remove_if(views_.begin(), views_.end(),
+                               [](const std::shared_ptr<View> &view) { return view->request_destroy; }),
+                views_.end());
 
     return 0;
 }
@@ -64,7 +64,7 @@ void Activity::FlushQueue()
     views_queue.erase(views_queue.begin(),views_queue.end());
 
     std::sort(views_.begin(), views_.end(),
-        [] (std::shared_ptr<View> const& view1, std::shared_ptr<View> const& view2) { return view1->priority < view2->priority; });
+              [] (std::shared_ptr<View> const& view1, std::shared_ptr<View> const& view2) { return view1->priority < view2->priority; });
 }
 
 bool Activity::HasActivity()

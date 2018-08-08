@@ -8,13 +8,13 @@
 class View
 {
 public:
-	virtual ~View();
+    virtual ~View();
 
-	virtual int HandleInput(int focus, const Input& input);
-	virtual int Display();
+    virtual int HandleInput(int focus, const Input& input);
+    virtual int Display();
 
-	// FIXME Not a good way to signal it needs to be destroyed
-	bool request_destroy = false;
-	unsigned int priority = 100;
+    // FIXME Not a good way to signal it needs to be destroyed
+    bool request_destroy = false;
+    unsigned int priority = 100;
 };
 #endif

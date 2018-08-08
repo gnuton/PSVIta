@@ -27,18 +27,18 @@ void App::start(){
     this->showSplashScreen();
 
     while (1) {
-      vita2d_start_drawing();
-      vita2d_clear_screen();
+        vita2d_start_drawing();
+        vita2d_clear_screen();
 
-      input.Get();
+        input.Get();
 
-      this->activity->FlushQueue();
-      this->activity->HandleInput(1, input);
-      this->activity->Display();
+        this->activity->FlushQueue();
+        this->activity->HandleInput(1, input);
+        this->activity->Display();
 
-      vita2d_end_drawing();
-      vita2d_swap_buffers();
-      sceDisplayWaitVblankStart();
+        vita2d_end_drawing();
+        vita2d_swap_buffers();
+        sceDisplayWaitVblankStart();
     }
 }
 

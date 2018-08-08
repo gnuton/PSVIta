@@ -12,10 +12,10 @@
 class Activity: public Singleton<Activity>, public View {
     friend class Singleton<Activity>;
 public:
-	~Activity();
+    ~Activity();
 
-	int HandleInput(int focus, const Input& input);
-	int Display();
+    int HandleInput(int focus, const Input& input);
+    int Display();
 
     void AddView(std::shared_ptr<View> view);
     void FlushQueue();
@@ -23,7 +23,7 @@ public:
 
 
 private:
-    std::mutex mtx_; 
+    std::mutex mtx_;
     std::vector<std::shared_ptr<View>> views_;
     std::vector<std::shared_ptr<View>> views_queue;
 };
