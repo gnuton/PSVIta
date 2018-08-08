@@ -1,3 +1,6 @@
+#ifndef APP_H
+#define APP_H
+
 #include "activity.h"
 #include "logger.h"
 
@@ -15,4 +18,5 @@ private:
     Activity *activity;
     Logger *logger;
 };
+#endif
 

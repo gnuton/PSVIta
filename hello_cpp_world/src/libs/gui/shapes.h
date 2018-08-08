@@ -1,6 +1,7 @@
-#pragma once
+#ifndef SHAPES_H
+#define SHAPES_H
 
-#include <global_include.h>
+#pragma once
 
 class Point {
 	public:
@@ -18,3 +19,5 @@ class Rectangle {
 
 		int Inside(const Point &pt) const;
 };
+
+#endif

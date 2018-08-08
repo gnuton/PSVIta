@@ -1,5 +1,8 @@
+#ifndef SPLASH_THREAD_H
+#define SPLASH_THREAD_H
 #pragma once
-
-#include <global_include.h>
+#include <psp2/types.h>
 
 void splash_thread(SceSize args_size, void *args);
+
+#endif

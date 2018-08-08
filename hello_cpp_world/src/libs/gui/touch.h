@@ -1,6 +1,9 @@
-#pragma once
+#ifndef TOUCH_H
+#define TOUCH_H
 
-#include <global_include.h>
+#pragma once
 
 #define TOUCH_HEIGHT 1087
 #define TOUCH_WIDTH 1919
+
+#endif

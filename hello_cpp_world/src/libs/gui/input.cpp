@@ -1,5 +1,8 @@
 #include "input.h"
 
+#include <math.h>
+#include <string.h>
+
 #include "screen.h"
 #include "touch.h"
 #include "utils.h"

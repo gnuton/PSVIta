@@ -1,8 +1,10 @@
-#pragma once
+#ifndef INPUT_H
+#define INPUT_H
 
-#include <global_include.h>
-#include "texture.h"
 #include <shapes.h>
+#include "texture.h"
+
+#pragma once
 
 class Input {
 	private:
@@ -37,3 +39,4 @@ class Input {
 		int TouchInRectangle(const Rectangle &rect) const;
 		int TouchInTexture(const Point &draw_pt, const Texture &tex) const;
 };
+#endif

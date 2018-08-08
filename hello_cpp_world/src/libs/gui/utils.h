@@ -1,3 +1,6 @@
+#ifndef UTILS_H
+#define UTILS_H
+
 #define _countof(a) (sizeof(a)/sizeof(*(a)))
 
 
@@ -18,3 +21,5 @@ T align_left(T a, V b)
 {
     return a - b;
 }
+
+#endif

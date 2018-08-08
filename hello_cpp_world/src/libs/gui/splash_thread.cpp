@@ -1,5 +1,9 @@
 #include "splash_thread.h"
-#include <global_include.h>
+
+#include <psp2/kernel/modulemgr.h>
+#include <psp2/kernel/threadmgr.h>
+#include <vita2d.h>
+#include <psp2/display.h>
 
 extern unsigned char _binary_assets_spr_img_splash_png_start;
 extern unsigned char _binary_assets_spr_gekihen_splash_png_start;

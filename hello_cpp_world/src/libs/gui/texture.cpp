@@ -1,4 +1,6 @@
 #include "texture.h"
+#include <thread>
+#include <mutex>
 
 // TODO Use polymorphism instead of duplicated class
 

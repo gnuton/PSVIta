@@ -1,7 +1,14 @@
+#ifndef TEXTURE_H
+#define TEXTURE_H
+
 #pragma once
 
-#include <global_include.h>
-
+#include <unordered_map>
+#include <memory>
+#include <psp2/touch.h>
+#include <psp2/ctrl.h>
+#include <vita2d.h>
+#include <algorithm>
 #include "shapes.h"
 
 void DeleteTexture(vita2d_texture* tex);
@@ -41,4 +48,4 @@ private:
 
   Status m_status = LOADING;
 };
-
+#endif

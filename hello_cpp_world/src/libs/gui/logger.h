@@ -3,6 +3,7 @@
 
 #include <string>
 #include <map>
+
 #include "singleton.h"
 
 enum LoggerFormat { debug, info, warning, error };

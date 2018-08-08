@@ -1,13 +1,16 @@
-#pragma once
-
-#include <global_include.h>
+#ifndef ACTIVITY_H
+#define ACTIVITY_H
 
 #include "singleton.h"
 #include "Views/View.h"
+#include <mutex>
+#include <vector>
+#include <memory>
 
+#pragma once
 
 class Activity: public Singleton<Activity>, public View {
-friend class Singleton<Activity>;
+    friend class Singleton<Activity>;
 public:
 	~Activity();
 
@@ -24,3 +27,4 @@ private:
     std::vector<std::shared_ptr<View>> views_;
     std::vector<std::shared_ptr<View>> views_queue;
 };
+#endif
