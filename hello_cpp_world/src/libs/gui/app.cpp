@@ -42,6 +42,10 @@ void App::start(){
     }
 }
 
+void App::AddView(std::shared_ptr<View> view){
+    this->activity->AddView(view);
+}
+
 void App::showSplashScreen(){
     this->logger->log(LoggerFormat::debug, "Showing splash screen");
 
@@ -49,5 +53,7 @@ void App::showSplashScreen(){
     splash->priority = 200;
     this->activity->AddView(splash);
 }
+
+
 
 
