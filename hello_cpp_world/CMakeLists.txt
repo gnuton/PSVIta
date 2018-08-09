@@ -30,6 +30,7 @@ set(VITA_TITLEID  "VSDK00005")
 # Optional version string to show in LiveArea's more info screen
 set(VITA_VERSION  "01.00")
 option(DEBUGNET "Enable debugnet for logging" ON)
+add_definitions(-DVITA_TITLEID="${VITA_TITLEID}")
 
 ## Flags and includes for building
 # Note that we make sure not to overwrite previous flags
@@ -103,6 +104,8 @@ target_link_libraries(
     z # required by png for crc32
     SceNet_stub
     SceNetCtl_stub
+    freetype
+    ScePower_stub
 )
 
 
