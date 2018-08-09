@@ -4,7 +4,7 @@ git:
 os: linux
 language: c
 dist: trusty
-sudo: false
+sudo: required
 
 install:
   - cd ${TRAVIS_BUILD_DIR}
@@ -14,7 +14,7 @@ install:
   - ./install-all.sh
   
 script:
-  - export VITASDK=${TRAVIS_BUILD_DIR}/vitasdk
+  - export VITASDK=/usr/local/vitasdk
   - export PATH=${VITASDK}/bin:${PATH}
   - cd hello_cpp_world
   - mkdir build
