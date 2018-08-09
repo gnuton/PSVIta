@@ -7,11 +7,14 @@
 #include "singleton.h"
 
 enum LoggerFormat { debug, info, warning, error };
+
 class Logger: public Singleton<Logger> {
     friend class Singleton<Logger>;
     Logger();
+
 public:
     virtual ~Logger();
+    static void TerminateLogger();
 
 private:
     const unsigned short maxBufferSize = 512;
@@ -25,7 +28,7 @@ private:
 
 
 public:
-    void log(LoggerFormat f, const std::string& msg);
+    void Log(LoggerFormat f, const std::string& msg);
 };
 
 #endif // LOGGER_H
