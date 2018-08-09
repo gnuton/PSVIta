@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/gnuton/PSVIta.svg?branch=master)](https://travis-ci.org/gnuton/PSVIta)
 # PSVIta
 PSVita experiments
 
