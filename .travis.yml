@@ -2,8 +2,8 @@ git:
   depth: 1
 
 os: linux
-language: c
-dist: trusty
+language: cpp
+dist: xenial
 sudo: required
 
 install:
