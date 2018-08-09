@@ -16,8 +16,8 @@ install:
   - ./install-all.sh
   
 script:
-  - export VITASDK=/usr/local/vitasdk
-  - export PATH=${VITASDK}/bin:${PATH}
+  - cd ${TRAVIS_BUILD_DIR}
+  - cd PSVita
   - cd hello_cpp_world
   - mkdir build
   - cd build
