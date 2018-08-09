@@ -7,6 +7,8 @@ dist: xenial
 sudo: required
 
 install:
+  - export VITASDK=/usr/local/vitasdk
+  - export PATH=$VITASDK/bin:$PATH
   - cd ${TRAVIS_BUILD_DIR}
   - git clone https://github.com/vitasdk/vdpm
   - cd vdpm
