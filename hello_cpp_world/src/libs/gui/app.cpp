@@ -24,7 +24,7 @@ App::~App(){
 void App::start(){
     this->logger->Log(LoggerFormat::debug, "Starting main loop");
     Input input;
-    this->showSplashScreen();
+
 
     while (1) {
         vita2d_start_drawing();

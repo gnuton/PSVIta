@@ -5,11 +5,14 @@
 #include <cstdio>
 #include <map>
 #include "app.h"
+#include "Views/background.h"
 
 int main(int argc, char *argv[]) {
   auto app = App();
-  app.start();
+  app.showSplashScreen();
+  auto mainView = std::make_shared<Background>();
+  app.AddView(mainView);
 
-  //sceKernelDelayThread(20*1000*1000);
+  app.start();
   return 0;
 }

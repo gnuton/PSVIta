@@ -13,9 +13,9 @@ public:
     virtual ~App();
     void start();
     void AddView(std::shared_ptr<View> view);
+    void showSplashScreen();
 
 private:
-    void showSplashScreen();
     Activity *activity;
     Logger *logger;
 };
