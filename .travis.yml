@@ -16,5 +16,6 @@ script:
   - export PATH=${VITASDK}/bin:${PATH}
   - cd hello_cpp_world
   - mkdir build
+  - cd build
   - cmake -DCMAKE_BUILD_TYPE=Release ..
   - make
