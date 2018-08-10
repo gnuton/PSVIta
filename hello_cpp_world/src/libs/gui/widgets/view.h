@@ -19,9 +19,21 @@ public:
     inline unsigned int getPriority() const { return priority; }
     inline bool isDestroyable() const { return request_destroy; }
 
+    const Point getPos() const{ return pos; }
+    void setPos(const Point& topLeftPoint) { pos = topLeftPoint; }
+
+    const int getHeight() const { return height; }
+    void setHeight(const int height) { this->height = height; }
+
+    const int getWidth() const { return width; }
+    void setWidth(const int width) { this->width = width; }
+
 protected:
     // FIXME Not a good way to signal it needs to be destroyed
     bool request_destroy = false;
     unsigned int priority = 100;
+    Point pos = Point(0,0);
+    int height = 0;
+    int width = 0;
 };
 #endif
