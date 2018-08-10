@@ -3,29 +3,21 @@
 
 #include "shapes.h"
 #include "constants.h"
-#include <sstream>
-#include <string>
 #include <unordered_map>
 #include "unordered_map_pair_hash.h"
 
 class Font {
 public:
-	Font(const std::string &path, unsigned int fSize);
+    Font(const std::string &path, unsigned int fSize);
 
-        int Draw(const Point &pt, const std::string &text, int color = Color::White);
-        int DrawCentered(const Rectangle &rect, const std::string &text, int color = Color::White);
+    int Draw(const Point &pt, const std::string &text, int color = Color::White);
+    int DrawCentered(const Rectangle &rect, const std::string &text, int color = Color::White);
 
-	static std::unordered_map<std::pair<std::string, unsigned int>, vita2d_font*> fontCache;
-
-        static std::string FontDir() {
-
-            std::stringstream ss;
-            ss << "ux0:/app/" << VITA_TITLEID << "/resources/fonts/";
-            return ss.str();
-        }
+    inline static std::string FontDir(){ return "app0:resources/fonts/"; }
+    static std::unordered_map<std::pair<std::string, unsigned int>, vita2d_font*> fontCache;
 
 private:
-	vita2d_font *font;
-	unsigned int size;
+    vita2d_font *font;
+    unsigned int size;
 };
 #endif

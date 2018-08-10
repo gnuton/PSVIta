@@ -25,6 +25,7 @@ void Logger::Log(LoggerFormat f, const std::string& msg){
 
 void Logger::TerminateLogger() {
 #ifdef DEBUGNET
+    Logger::get_instance()->Log(LoggerFormat::error, "Termingating app...");
     std::exception_ptr p = std::current_exception();
     try {
         std::rethrow_exception(p);
