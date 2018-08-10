@@ -11,6 +11,7 @@
 class View
 {
 public:
+    View(const Point& pos= Point(0,0), int height = 0, int width = 0, unsigned int priority = 100);
     virtual ~View();
 
     virtual int HandleInput(int focus, const Input& input);
@@ -31,9 +32,9 @@ public:
 protected:
     // FIXME Not a good way to signal it needs to be destroyed
     bool request_destroy = false;
-    unsigned int priority = 100;
-    Point pos = Point(0,0);
-    int height = 0;
-    int width = 0;
+    unsigned int priority;
+    Point pos;
+    int height;
+    int width;
 };
 #endif

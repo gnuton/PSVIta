@@ -1,10 +1,7 @@
 #ifndef BACKGROUND_H
 #define BACKGROUND_H
-
-#pragma once
-
-#include "view.h"
 #include <texture.h>
+#include "view.h"
 
 class Background : public View
 {

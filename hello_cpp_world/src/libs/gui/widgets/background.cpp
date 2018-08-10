@@ -1,4 +1,5 @@
 #include "background.h"
+#include <constants/screen.h>
 
 extern unsigned char _binary_assets_spr_img_bg_png_start;
 
@@ -9,6 +10,6 @@ Background::Background() :
 
 int Background::Draw()
 {
-	img_bg.Draw(Point(0, 0));
+    img_bg.Draw(this->pos);
 	return 0;
 }
