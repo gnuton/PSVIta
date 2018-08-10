@@ -34,7 +34,7 @@ void App::start(){
 
         this->activity->FlushQueue();
         this->activity->HandleInput(1, input);
-        this->activity->Display();
+        this->activity->Draw();
 
         vita2d_end_drawing();
         vita2d_swap_buffers();

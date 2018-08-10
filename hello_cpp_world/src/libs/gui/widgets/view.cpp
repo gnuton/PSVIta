@@ -6,6 +6,6 @@ int View::HandleInput(int focus, const Input& input) {
     return 0;
 }
 
-int View::Display() {
+int View::Draw() {
     return 0;
 }

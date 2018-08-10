@@ -15,7 +15,7 @@ public:
     ~Activity();
 
     int HandleInput(int focus, const Input& input);
-    int Display();
+    int Draw();
 
     void AddView(std::shared_ptr<View> view);
     void FlushQueue();

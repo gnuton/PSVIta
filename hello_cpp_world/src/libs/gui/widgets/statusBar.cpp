@@ -34,7 +34,7 @@ StatusBar::StatusBar() :
 }
 
 
-int StatusBar::Display()
+int StatusBar::Draw()
 {
     // Background
     vita2d_draw_rectangle(0, 0, SCREEN_WIDTH, STATUSBAR_HEIGHT, Color::Black);

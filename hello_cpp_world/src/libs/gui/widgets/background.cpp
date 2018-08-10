@@ -7,7 +7,7 @@ Background::Background() :
 {
 }
 
-int Background::Display()
+int Background::Draw()
 {
 	img_bg.Draw(Point(0, 0));
 	return 0;

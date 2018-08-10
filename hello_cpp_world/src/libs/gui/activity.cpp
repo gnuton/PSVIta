@@ -35,14 +35,14 @@ int Activity::HandleInput(int focus, const Input& input)
 }
 
 
-int Activity::Display()
+int Activity::Draw()
 {
     std::lock_guard<std::mutex> lock(mtx_);
 
     if (views_.empty()) return 0;
 
     for (auto it = begin(views_), it_last = end(views_); it != it_last; ++it) {
-        (*it)->Display();
+        (*it)->Draw();
     }
 
     return 0;

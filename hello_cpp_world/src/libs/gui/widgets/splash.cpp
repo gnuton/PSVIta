@@ -14,7 +14,7 @@ Splash::Splash() :
     priority = 200;
 }
 
-int Splash::Display()
+int Splash::Draw()
 {
     Texture splashes[] = {
         vhbb_splash,

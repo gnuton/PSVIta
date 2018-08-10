@@ -6,7 +6,7 @@ ListView::ListView()
 
 }
 
-int ListView::Display()
+int ListView::Draw()
 {
     // Background
     // vita2d_draw_rectangle(0, 0, SCREEN_WIDTH, STATUSBAR_HEIGHT, Color::Red);

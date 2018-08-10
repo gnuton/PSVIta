@@ -11,7 +11,7 @@ class Background : public View
 public:
 	Background();
 
-	int Display() override;
+	int Draw() override;
 private:
 	Texture img_bg;
 };

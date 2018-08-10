@@ -12,7 +12,7 @@
 class StatusBar: public View {
 public:
     StatusBar();
-    int Display() override;
+    int Draw() override;
 
 private:
     Font font_22;

@@ -17,7 +17,7 @@ class Splash : public View
 public:
     Splash();
 
-    int Display() override;
+    int Draw() override;
 private:
     unsigned int splash_index = 0;
     SplashStep step = STEP_FADING_IN;
