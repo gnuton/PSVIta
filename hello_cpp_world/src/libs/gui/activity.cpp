@@ -14,26 +14,26 @@ int Activity::HandleInput(int focus, const Input& input)
 {
     std::lock_guard<std::mutex> lock(mtx_);
 
-    if (views_.size() > 1) {
-        for (auto it = begin(views_), it_last = --end(views_); it != it_last; ) {
+    if (windows_.size() > 1) {
+        for (auto it = begin(windows_), it_last = --end(windows_); it != it_last; ) {
             (*it)->HandleInput(0, input);
             if ((*it)->isDestroyable()) {
-                it = views_.erase(it);
+                it = windows_.erase(it);
             } else {
                 ++it;
             }
 
         }
-    } else if (views_.size() == 0) {
+    } else if (windows_.size() == 0) {
         return 0;
     }
 
-    views_.back()->HandleInput(focus, input);
+    windows_.back()->HandleInput(focus, input);
 
-    views_.erase(
-                std::remove_if(views_.begin(), views_.end(),
-                               [](const std::shared_ptr<View> &view) { return view->isDestroyable(); }),
-                views_.end());
+    windows_.erase(
+                std::remove_if(windows_.begin(), windows_.end(),
+                               [](const std::shared_ptr<Window> &win) { return win->isDestroyable(); }),
+                windows_.end());
 
     return 0;
 }
@@ -43,9 +43,9 @@ int Activity::Draw()
 {
     std::lock_guard<std::mutex> lock(mtx_);
 
-    if (views_.empty()) return 0;
+    if (windows_.empty()) return 0;
 
-    for (auto it = begin(views_), it_last = end(views_); it != it_last; ++it) {
+    for (auto it = begin(windows_), it_last = end(windows_); it != it_last; ++it) {
         (*it)->Draw();
     }
 
@@ -53,27 +53,27 @@ int Activity::Draw()
 }
 
 
-void Activity::AddView(std::shared_ptr<View> view)
+void Activity::AddWindow(std::shared_ptr<Window> window)
 {
     std::lock_guard<std::mutex> lock(mtx_);
 
-    views_queue.push_back(view);
+    windows_queue.push_back(window);
 }
 
 void Activity::FlushQueue()
 {
     std::lock_guard<std::mutex> lock(mtx_);
 
-    std::move(views_queue.begin(), views_queue.end(), std::back_inserter(views_));
-    views_queue.erase(views_queue.begin(),views_queue.end());
+    std::move(windows_queue.begin(), windows_queue.end(), std::back_inserter(windows_));
+    windows_queue.erase(windows_queue.begin(),windows_queue.end());
 
-    std::sort(views_.begin(), views_.end(),
-              [] (std::shared_ptr<View> const& view1, std::shared_ptr<View> const& view2) { return view1->getPriority() < view2->getPriority(); });
+    std::sort(windows_.begin(), windows_.end(),
+              [] (std::shared_ptr<Window> const& win1, std::shared_ptr<Window> const& win2) { return win1->getPriority() < win2->getPriority(); });
 }
 
 bool Activity::HasActivity()
 {
     std::lock_guard<std::mutex> lock(mtx_);
 
-    return !views_.empty();
+    return !windows_.empty();
 }

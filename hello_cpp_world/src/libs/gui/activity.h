@@ -2,7 +2,7 @@
 #define ACTIVITY_H
 
 #include "singleton.h"
-#include "widgets/view.h"
+#include "widgets/window.h"
 #include <mutex>
 #include <vector>
 #include <memory>
@@ -17,7 +17,7 @@ public:
     int HandleInput(int focus, const Input& input);
     int Draw();
 
-    void AddView(std::shared_ptr<View> view);
+    void AddWindow(std::shared_ptr<Window> window);
     void FlushQueue();
     bool HasActivity();
 
@@ -25,7 +25,7 @@ public:
 private:
     Activity();
     std::mutex mtx_;
-    std::vector<std::shared_ptr<View>> views_;
-    std::vector<std::shared_ptr<View>> views_queue;
+    std::vector<std::shared_ptr<Window>> windows_;
+    std::vector<std::shared_ptr<Window>> windows_queue;
 };
 #endif

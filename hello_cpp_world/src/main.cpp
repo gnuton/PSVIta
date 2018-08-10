@@ -10,12 +10,8 @@
 
 int main(int argc, char *argv[]) {
   auto app = App();
-  app.showSplashScreen();
-  auto bg = std::make_shared<Background>();
-  app.AddView(bg);
-  auto sb = std::make_shared<StatusBar>();
-  app.AddView(sb);
+  app.ShowSplashScreen();
 
-  app.start();
+  app.Start();
   return 0;
 }

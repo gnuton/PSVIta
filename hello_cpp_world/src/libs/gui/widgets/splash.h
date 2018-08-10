@@ -2,7 +2,7 @@
 #define SPLASH_H
 
 #include <texture.h>
-#include "view.h"
+#include "window.h"
 
 #pragma once
 
@@ -12,10 +12,10 @@ typedef enum {
     STEP_FADING_OUT,
 } SplashStep;
 
-class Splash : public View
+class Splash : public Window
 {
 public:
-    Splash(const View* parent);
+    Splash(const View* parent = NULL);
 
     int Draw() override;
 private:
