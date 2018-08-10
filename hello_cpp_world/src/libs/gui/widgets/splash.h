@@ -2,7 +2,7 @@
 #define SPLASH_H
 
 #include <texture.h>
-#include "View.h"
+#include "view.h"
 
 #pragma once
 

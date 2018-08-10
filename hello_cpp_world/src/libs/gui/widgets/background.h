@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "View.h"
+#include "view.h"
 #include <texture.h>
 
 class Background : public View

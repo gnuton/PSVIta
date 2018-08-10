@@ -2,7 +2,7 @@
 #define ACTIVITY_H
 
 #include "singleton.h"
-#include "Views/View.h"
+#include "widgets/view.h"
 #include <mutex>
 #include <vector>
 #include <memory>

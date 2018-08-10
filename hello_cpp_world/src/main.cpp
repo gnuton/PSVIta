@@ -5,8 +5,8 @@
 #include <cstdio>
 #include <map>
 #include "app.h"
-#include "Views/background.h"
-#include "Views/statusBar.h"
+#include "widgets/background.h"
+#include "widgets/statusBar.h"
 
 int main(int argc, char *argv[]) {
   auto app = App();

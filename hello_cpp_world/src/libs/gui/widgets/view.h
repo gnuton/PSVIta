@@ -1,8 +1,5 @@
 #ifndef VIEW_H
 #define VIEW_H
-
-#pragma once
-
 #include <input.h>
 
 class View
