@@ -13,6 +13,10 @@ public:
     virtual int HandleInput(int focus, const Input& input);
     virtual int Display();
 
+    inline unsigned int getPriority() const { return priority; }
+    inline bool isDestroyable() const { return request_destroy; }
+
+protected:
     // FIXME Not a good way to signal it needs to be destroyed
     bool request_destroy = false;
     unsigned int priority = 100;

@@ -2,10 +2,10 @@
 #define STATUSBAR_H
 #pragma once
 
-#include <screen.h>
 #include <texture.h>
 #include "View.h"
 #include "font.h"
+#include "constants/screen.h"
 
 #define STATUSBAR_HEIGHT 30
 

@@ -50,7 +50,6 @@ void App::showSplashScreen(){
     this->logger->Log(LoggerFormat::debug, "Showing splash screen");
 
     auto splash = std::make_shared<Splash>();
-    splash->priority = 200;
     this->activity->AddView(splash);
 }
 

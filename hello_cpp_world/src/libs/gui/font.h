@@ -2,7 +2,7 @@
 #define FONT_H
 
 #include "shapes.h"
-#include "constants.h"
+#include "constants/color.h"
 #include <unordered_map>
 #include "unordered_map_pair_hash.h"
 

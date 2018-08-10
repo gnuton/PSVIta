@@ -11,6 +11,7 @@ Splash::Splash() :
     vhbb_splash(Texture(&_binary_assets_spr_img_splash_png_start)),
     gekihen_splash(Texture(&_binary_assets_spr_gekihen_splash_png_start))
 {
+    priority = 200;
 }
 
 int Splash::Display()

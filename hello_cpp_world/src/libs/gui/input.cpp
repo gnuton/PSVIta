@@ -3,8 +3,8 @@
 #include <math.h>
 #include <string.h>
 
-#include "screen.h"
-#include "touch.h"
+#include "constants/screen.h"
+#include "constants/touch.h"
 #include "utils.h"
 #include "logger.h"
 

@@ -6,7 +6,7 @@
 #include "utils.h"
 #include "font.h"
 
-#include "constants.h"
+#include "constants/color.h"
 
 extern unsigned char _binary_assets_spr_img_statsbar_battery_png_start;
 extern unsigned char _binary_assets_spr_img_statsbar_battery_charge_png_start;

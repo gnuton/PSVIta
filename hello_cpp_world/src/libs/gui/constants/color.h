@@ -1,5 +1,5 @@
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#ifndef COLOR_H
+#define COLOR_H
 #include <vita2d.h>
 
 enum Color {
