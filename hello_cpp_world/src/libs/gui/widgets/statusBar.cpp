@@ -7,6 +7,7 @@
 #include "font.h"
 
 #include "constants/color.h"
+#include "constants/screen.h"
 
 extern unsigned char _binary_assets_spr_img_statsbar_battery_png_start;
 extern unsigned char _binary_assets_spr_img_statsbar_battery_charge_png_start;
@@ -17,36 +18,24 @@ int displayBattery();
 int displayDate();
 
 StatusBar::StatusBar() :
+    View(Point(0,0), 30, SCREEN_WIDTH, PriorityLevel::Max - 1), // max -1 just below the splash screen
     font_22(Font(std::string(Font::FontDir() + "segoeui.ttf"), 22)),
     img_statsbar_battery(Texture(&_binary_assets_spr_img_statsbar_battery_png_start)),
     img_statsbar_battery_charge(Texture(&_binary_assets_spr_img_statsbar_battery_charge_png_start))
 {
-#if 0
-
-    SceNetCtlInfo info;
-    if(sceNetCtlInetGetInfo(SCE_NETCTL_INFO_GET_IP_ADDRESS, &info) < 0) {
-        dbg_printf(DBG_ERROR, "Failed to obtain Vita IP address");
-    } else {
-        strncpy(vitaip, (char *)&(info.ip_address), 16);
-    }
-
-#endif
 }
 
 
 int StatusBar::Draw()
 {
     // Background
-    vita2d_draw_rectangle(0, 0, SCREEN_WIDTH, STATUSBAR_HEIGHT, Color::Black);
+    vita2d_draw_rectangle(this->pos.x, this->pos.y, this->width, this->height, Color::Black);
 
     font_22.Draw(Point(15, 22), "Vita HomeBrew Browser", Color::White);
 
     displayBattery();
     displayDate();
 
-#if 0
-    font_22.Draw(Point(400, 22), vitaip, Color::White);
-#endif
     return 0;
 }
 

@@ -2,16 +2,17 @@
 
 #include <texture.h>
 #include <algorithm>
+#include "constants/screen.h"
 
 extern unsigned char _binary_assets_spr_img_splash_png_start;
 extern unsigned char _binary_assets_spr_gekihen_splash_png_start;
 
 
 Splash::Splash() :
+    View(Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Max),
     vhbb_splash(Texture(&_binary_assets_spr_img_splash_png_start)),
     gekihen_splash(Texture(&_binary_assets_spr_gekihen_splash_png_start))
 {
-    priority = 200;
 }
 
 int Splash::Draw()

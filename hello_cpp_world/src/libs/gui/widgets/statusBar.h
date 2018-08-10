@@ -7,8 +7,6 @@
 #include "font.h"
 #include "constants/screen.h"
 
-#define STATUSBAR_HEIGHT 30
-
 class StatusBar: public View {
 public:
     StatusBar();
@@ -19,10 +17,6 @@ private:
 
     Texture img_statsbar_battery;
     Texture img_statsbar_battery_charge;
-
-#ifdef _DEBUG
-    char vitaip[16] = {0};
-#endif
 
     void getDateString(char *string, int date_format, SceDateTime *time);
     void getTimeString(char *string, int time_format, SceDateTime *time);
