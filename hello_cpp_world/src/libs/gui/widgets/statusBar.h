@@ -9,7 +9,7 @@
 
 class StatusBar: public View {
 public:
-    StatusBar();
+    StatusBar(const View* parent = NULL);
     int Draw() override;
 
 private:

@@ -1,6 +1,7 @@
 #include "view.h"
 
-View::View(const Point& pos, int height, int width, unsigned int priority):
+View::View(const View* parent, const Point& pos, int height, int width, unsigned int priority):
+    parent(parent),
     pos(pos),
     height(height),
     width(width),

@@ -7,6 +7,8 @@
  * A View occupies a rectangular area on the screen and is responsible for drawing and event handling.
  * View is the base class for widgets, which are used to create interactive UI components
  * (buttons, text fields, etc.).
+ * Top level view do not have parents and they are called "windows".
+ * Windows are handled by Activity class. (Naming is temporary since it will be cleaned ASAP).
  */
 
 
@@ -14,7 +16,11 @@ class View
 {
 public:
 
-    View(const Point& pos= Point(0,0), int height = 0, int width = 0, unsigned int priority = 100);
+    View(const View *parent,
+         const Point& pos= Point(0,0),
+         int height = 0,
+         int width = 0,
+         unsigned int priority = 100);
     virtual ~View();
 
     virtual int HandleInput(int focus, const Input& input);
@@ -32,6 +38,7 @@ public:
 
     const int getWidth() const { return width; }
     void setWidth(const int width) { this->width = width; }
+
 protected:
     enum PriorityLevel { Min = 0, Normal = 100, Max= 256 };
 
@@ -41,5 +48,6 @@ protected:
     Point pos;
     int height;
     int width;
+    const View *parent;
 };
 #endif

@@ -49,7 +49,7 @@ void App::AddView(std::shared_ptr<View> view){
 void App::showSplashScreen(){
     this->logger->Log(LoggerFormat::debug, "Showing splash screen");
 
-    auto splash = std::make_shared<Splash>();
+    auto splash = std::make_shared<Splash>(this->activity);
     this->activity->AddView(splash);
 }
 

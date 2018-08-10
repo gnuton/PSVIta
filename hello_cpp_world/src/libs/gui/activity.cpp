@@ -1,4 +1,10 @@
 #include "activity.h"
+#include "constants/screen.h"
+
+Activity::Activity() :
+    View(NULL, Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Normal)
+{
+}
 
 Activity::~Activity(){
 }

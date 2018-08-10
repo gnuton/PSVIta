@@ -6,7 +6,7 @@
 class ListView : public View
 {
 public:
-    ListView();
+    ListView(const View* parent);
     int Draw() override;
 };
 

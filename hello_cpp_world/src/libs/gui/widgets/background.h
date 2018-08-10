@@ -6,7 +6,7 @@
 class Background : public View
 {
 public:
-	Background();
+    Background(const View *parent = 0);
 
 	int Draw() override;
 private:

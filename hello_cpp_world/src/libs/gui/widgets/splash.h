@@ -15,7 +15,7 @@ typedef enum {
 class Splash : public View
 {
 public:
-    Splash();
+    Splash(const View* parent);
 
     int Draw() override;
 private:
