@@ -56,7 +56,6 @@ int Activity::Draw()
 void Activity::AddWindow(std::shared_ptr<Window> window)
 {
     std::lock_guard<std::mutex> lock(mtx_);
-
     windows_queue.push_back(window);
 }
 
@@ -74,6 +73,5 @@ void Activity::FlushQueue()
 bool Activity::HasActivity()
 {
     std::lock_guard<std::mutex> lock(mtx_);
-
     return !windows_.empty();
 }

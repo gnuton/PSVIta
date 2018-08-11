@@ -9,9 +9,11 @@
 
 int main(int argc, char *argv[]) {
   auto app = App();
-  app.ShowSplashScreen();
+
   auto mainView = std::make_shared<MainWindow>();
   app.AddWindow(mainView);
+
+  app.ShowSplashScreen();
   app.Start();
   return 0;
 }
