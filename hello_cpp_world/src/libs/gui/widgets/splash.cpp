@@ -17,6 +17,9 @@ Splash::Splash(const View* parent) :
 
 int Splash::Draw()
 {
+    if (!this->isVisible())
+        return -1;
+
     Texture splashes[] = {
         vhbb_splash,
         gekihen_splash

@@ -17,6 +17,9 @@ Button::Button(const View* parent,
 }
 
 int Button::Draw() {
+    if (!this->isVisible())
+        return -1;
+
     // Background
     vita2d_draw_rectangle(this->pos.x, this->pos.y, this->width, this->height, Color::Red);
 

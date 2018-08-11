@@ -39,6 +39,9 @@ public:
     const int getWidth() const { return width; }
     void setWidth(const int width) { this->width = width; }
 
+    const int isVisible() const { return visible; }
+    void setVisibility(const bool visible) { this->visible = visible; }
+
 protected:
     enum PriorityLevel { Min = 0, Normal = 100, Max= 256 };
 
@@ -49,5 +52,6 @@ protected:
     int height;
     int width;
     const View *parent;
+    bool visible = true;
 };
 #endif

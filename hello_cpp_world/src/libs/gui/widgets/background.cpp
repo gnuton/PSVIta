@@ -15,6 +15,9 @@ Background::Background(const View* parent) :
 
 int Background::Draw()
 {
+    if (!this->isVisible())
+        return -1;
+
     img_bg.Draw(this->pos);
 	return 0;
 }

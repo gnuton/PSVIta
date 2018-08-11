@@ -14,6 +14,8 @@ MainWindow::~MainWindow() {
 }
 
 int MainWindow::Draw(){
+    if (!this->isVisible())
+        return -1;
     background->Draw();
     statusBar->Draw();
     return 0;
