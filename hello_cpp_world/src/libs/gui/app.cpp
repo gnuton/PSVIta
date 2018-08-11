@@ -21,7 +21,7 @@ App::~App(){
     sceKernelExitProcess(0);
 }
 
-void App::Start(){
+void App::run(){
     this->logger->Log(LoggerFormat::debug, "Starting main loop");
     Input input;
 
@@ -46,7 +46,7 @@ void App::AddWindow(std::shared_ptr<Window> window){
     this->activity->AddWindow(window);
 }
 
-void App::ShowSplashScreen(){
+void App::showSplashScreen(){
     this->logger->Log(LoggerFormat::debug, "Showing splash screen");
 
     auto splash = std::make_shared<Splash>(this->activity);

@@ -11,9 +11,9 @@ class App {
 public:
     App();
     virtual ~App();
-    void Start();
+    void run();
     void AddWindow(std::shared_ptr<Window> window);
-    void ShowSplashScreen();
+    void showSplashScreen();
 
 private:
     Activity *activity;
