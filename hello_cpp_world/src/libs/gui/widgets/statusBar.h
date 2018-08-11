@@ -9,8 +9,8 @@
 
 class StatusBar: public View {
 public:
-    StatusBar(const View* parent = NULL);
-    int Draw() override;
+    StatusBar(View* parent = NULL);
+    int draw() override;
 
 private:
     Font font_22;

@@ -15,11 +15,16 @@ class MainWindow : public Window
 public:
     MainWindow();
     virtual ~MainWindow();
+    int draw() override;
 
-    int Draw() override;
-
+    const View* getCentralWidget() const { return centralWidget; }
+    void setCentralWidget(View* centralWidget) {
+        this->centralWidget = centralWidget;
+        centralWidget->setParent(this);
+    }
 private:
     StatusBar *statusBar;
+    View *centralWidget;
     Background *background;
 };
 

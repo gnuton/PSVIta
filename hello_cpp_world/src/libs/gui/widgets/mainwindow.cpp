@@ -4,6 +4,7 @@
 MainWindow::MainWindow() :
     Window(Activity::get_instance()),
     background(new Background(this)),
+    centralWidget(new View(this)),
     statusBar(new StatusBar(this))
 {
 }
@@ -11,12 +12,16 @@ MainWindow::MainWindow() :
 MainWindow::~MainWindow() {
     delete background;
     delete statusBar;
+    if (centralWidget)
+        delete centralWidget;
 }
 
-int MainWindow::Draw(){
+int MainWindow::draw(){
     if (!this->isVisible())
         return -1;
-    background->Draw();
-    statusBar->Draw();
+    background->draw();
+    statusBar->draw();
+    if (centralWidget)
+        centralWidget->draw();
     return 0;
 }

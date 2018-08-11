@@ -33,8 +33,8 @@ void App::Start(){
         input.Get();
 
         this->activity->FlushQueue();
-        this->activity->HandleInput(1, input);
-        this->activity->Draw();
+        this->activity->handleInput(1, input);
+        this->activity->draw();
 
         vita2d_end_drawing();
         vita2d_swap_buffers();

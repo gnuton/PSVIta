@@ -15,9 +15,9 @@ typedef enum {
 class Splash : public Window
 {
 public:
-    Splash(const View* parent = NULL);
+    Splash(View* parent = NULL);
 
-    int Draw() override;
+    int draw() override;
 private:
     unsigned int splash_index = 0;
     SplashStep step = STEP_FADING_IN;

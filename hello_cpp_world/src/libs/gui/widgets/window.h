@@ -13,14 +13,14 @@
 class Window : public View
 {
 public:
-    Window(const View *parent,
+    Window(View *parent,
            const Point& pos= Point(0,0),
            int height = SCREEN_HEIGHT,
            int width = SCREEN_WIDTH,
            unsigned int priority = PriorityLevel::Normal);
     virtual ~Window();
 
-    int Draw() override;
+    int draw() override;
 };
 
 #endif // WINDOW_H

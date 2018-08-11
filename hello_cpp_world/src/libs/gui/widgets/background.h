@@ -6,9 +6,9 @@
 class Background : public View
 {
 public:
-    Background(const View *parent = 0);
+    Background(View *parent);
 
-	int Draw() override;
+    int draw() override;
 private:
 	Texture img_bg;
 };

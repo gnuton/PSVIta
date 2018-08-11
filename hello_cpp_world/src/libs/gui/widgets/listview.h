@@ -6,8 +6,8 @@
 class ListView : public View
 {
 public:
-    ListView(const View* parent);
-    int Draw() override;
+    ListView(View* parent);
+    int draw() override;
 };
 
 #endif // LISTVIEW_H

@@ -2,12 +2,12 @@
 #include <vita2d.h>
 #include "constants/screen.h"
 
-ListView::ListView(const View* parent):
+ListView::ListView(View* parent):
     View(parent, Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Normal) {
 
 }
 
-int ListView::Draw() {
+int ListView::draw() {
     if (!this->isVisible())
         return -1;
     // Background

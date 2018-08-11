@@ -1,6 +1,6 @@
 #include "window.h"
 
-Window::Window(const View *parent,
+Window::Window(View *parent,
                const Point& pos,
                int height,
                int width,
@@ -18,6 +18,6 @@ Window::~Window() {
 }
 
 
-int Window::Draw() {
+int Window::draw() {
     return 0;
 }

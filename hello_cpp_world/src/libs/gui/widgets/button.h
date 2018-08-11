@@ -5,8 +5,8 @@
 class Button : public View
 {
 public:
-    Button(const View* parent, const std::string& text, const Point& point, int height, int size);
-    int Draw() override;
+    Button(View* parent, const std::string& text, const Point& point, int height, int size);
+    int draw() override;
 };
 
 #endif // BUTTON_H

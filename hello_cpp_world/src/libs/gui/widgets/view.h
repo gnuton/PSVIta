@@ -16,15 +16,15 @@ class View
 {
 public:
 
-    View(const View *parent,
+    View(View *parent,
          const Point& pos= Point(0,0),
          int height = 0,
          int width = 0,
          unsigned int priority = 100);
     virtual ~View();
 
-    virtual int HandleInput(int focus, const Input& input);
-    virtual int Draw();
+    virtual int handleInput(int focus, const Input& input);
+    virtual int draw();
 
 
     inline unsigned int getPriority() const { return priority; }
@@ -42,6 +42,9 @@ public:
     const int isVisible() const { return visible; }
     void setVisibility(const bool visible) { this->visible = visible; }
 
+    const View* getParent() const { return parent; }
+    void setParent(View* parent) { this->parent = parent; }
+
 protected:
     enum PriorityLevel { Min = 0, Normal = 100, Max= 256 };
 
@@ -51,7 +54,7 @@ protected:
     Point pos;
     int height;
     int width;
-    const View *parent;
+    View *parent;
     bool visible = true;
 };
 #endif

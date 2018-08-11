@@ -2,7 +2,7 @@
 #include <vita2d.h>
 #include "constants/color.h"
 
-Button::Button(const View* parent,
+Button::Button(View* parent,
                const std::string& text,
                const Point& point,
                int height,
@@ -16,7 +16,7 @@ Button::Button(const View* parent,
 
 }
 
-int Button::Draw() {
+int Button::draw() {
     if (!this->isVisible())
         return -1;
 

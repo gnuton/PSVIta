@@ -14,8 +14,8 @@ class Activity: public Singleton<Activity>, public View {
 public:
     ~Activity();
 
-    int HandleInput(int focus, const Input& input);
-    int Draw();
+    int handleInput(int focus, const Input& input);
+    int draw();
 
     void AddWindow(std::shared_ptr<Window> window);
     void FlushQueue();

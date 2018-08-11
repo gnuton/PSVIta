@@ -3,7 +3,7 @@
 
 extern unsigned char _binary_assets_spr_img_bg_png_start;
 
-Background::Background(const View* parent) :
+Background::Background(View* parent) :
     View(parent,
          Point(0,0),
          SCREEN_HEIGHT,
@@ -13,7 +13,7 @@ Background::Background(const View* parent) :
 {
 }
 
-int Background::Draw()
+int Background::draw()
 {
     if (!this->isVisible())
         return -1;
