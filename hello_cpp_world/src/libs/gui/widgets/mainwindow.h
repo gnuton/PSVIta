@@ -17,6 +17,9 @@ public:
     virtual ~MainWindow();
     int draw() override;
 
+    virtual bool isWidget() const { return true; }
+    virtual bool isWindow() const { return true; }
+
     const View* getCentralWidget() const { return centralWidget; }
     void setCentralWidget(View* centralWidget) {
         this->centralWidget = centralWidget;

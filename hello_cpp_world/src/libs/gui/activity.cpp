@@ -1,4 +1,6 @@
 #include "activity.h"
+#include <algorithm>
+
 #include "constants/screen.h"
 
 Activity::Activity() :

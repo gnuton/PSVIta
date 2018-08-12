@@ -1,6 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
-#include <input.h>
+#include "core/object.h"
+#include "shapes.h"
 
 /**
  * @brief the View class
@@ -12,8 +13,9 @@
  * Windows are handled by Activity class. (Naming is temporary since it will be cleaned ASAP).
  */
 
+class Input;
 
-class View
+class View : public Object
 {
 public:
     View(View *parent,
@@ -25,6 +27,9 @@ public:
 
     virtual int handleInput(const Input& input);
     virtual int draw();
+
+    virtual bool isWidget() const { return true; }
+    virtual bool isWindow() const { return false; }
 
     inline unsigned int getPriority() const { return priority; }
     inline bool isDestroyable() const { return request_destroy; }
@@ -48,9 +53,6 @@ public:
     const int isVisible() const { return visible; }
     void setVisibility(const bool visible) { this->visible = visible; }
 
-    const View* getParent() const { return parent; }
-    void setParent(View* parent) { this->parent = parent; }
-
 protected:
     enum PriorityLevel { Min = 0, Normal = 100, Max= 256 };
 
@@ -60,7 +62,6 @@ protected:
     Point pos;
     int height;
     int width;
-    View *parent;
     bool visible = true;
 };
 #endif
