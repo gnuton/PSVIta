@@ -10,13 +10,13 @@ Activity::~Activity(){
 }
 
 
-int Activity::handleInput(int focus, const Input& input)
+int Activity::handleInput(const Input& input)
 {
     std::lock_guard<std::mutex> lock(mtx_);
 
     if (windows_.size() > 1) {
         for (auto it = begin(windows_), it_last = --end(windows_); it != it_last; ) {
-            (*it)->handleInput(0, input);
+            (*it)->handleInput(input);
             if ((*it)->isDestroyable()) {
                 it = windows_.erase(it);
             } else {
@@ -28,7 +28,7 @@ int Activity::handleInput(int focus, const Input& input)
         return 0;
     }
 
-    windows_.back()->handleInput(focus, input);
+    windows_.back()->handleInput(input);
 
     windows_.erase(
                 std::remove_if(windows_.begin(), windows_.end(),

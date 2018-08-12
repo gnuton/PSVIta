@@ -23,9 +23,8 @@ public:
          unsigned int priority = 100);
     virtual ~View();
 
-    virtual int handleInput(int focus, const Input& input);
+    virtual int handleInput(const Input& input);
     virtual int draw();
-
 
     inline unsigned int getPriority() const { return priority; }
     inline bool isDestroyable() const { return request_destroy; }
@@ -38,6 +37,13 @@ public:
 
     const int getWidth() const { return width; }
     void setWidth(const int width) { this->width = width; }
+
+    const Rectangle getRectangleArea() const { return Rectangle(pos, Point(width + pos.x, height + pos.y)); }
+    void setRectangleArea(const Rectangle& area) {
+        this->pos = area.topLeft;
+        this->width = area.bottomRight.x - this->pos.x;
+        this->height = area.bottomRight.y - this->pos.y;
+    }
 
     const int isVisible() const { return visible; }
     void setVisibility(const bool visible) { this->visible = visible; }

@@ -12,7 +12,7 @@ View::View(View* parent, const Point& pos, int height, int width, unsigned int p
 
 View::~View() {}
 
-int View::handleInput(int focus, const Input& input) {
+int View::handleInput(const Input& input) {
     return 0;
 }
 

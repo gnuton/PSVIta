@@ -4,16 +4,24 @@
 
 Button::Button(View* parent,
                const std::string& text,
-               const Point& point,
+               const Point& topLeft,
                int height,
-               int size):
+               int width):
     View(parent,
-         Point(0,0),
+         topLeft,
          height,
          width,
-         parent ? parent->getPriority() : PriorityLevel::Normal)
+         parent ? parent->getPriority() : PriorityLevel::Normal),
+    label(label)
 {
 
+}
+
+Button::~Button() {
+}
+
+int Button::handleInput(const Input& input) {
+    input.TouchInRectangle(this->getRectangleArea());
 }
 
 int Button::draw() {
