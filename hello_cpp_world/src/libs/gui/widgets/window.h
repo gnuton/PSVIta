@@ -10,6 +10,7 @@
  * It's the parent of its views.
  * It's handled by the activity instance.
  */
+
 class Window : public View
 {
 public:
@@ -21,6 +22,8 @@ public:
     virtual ~Window();
 
     int draw() override;
+    virtual bool isWidget() const { return true; }
+    virtual bool isWindow() const { return true; }
 };
 
 #endif // WINDOW_H

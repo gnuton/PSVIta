@@ -17,14 +17,17 @@ public:
     Object(Object *parent);
     virtual ~Object();
 
-    const Object* getParent() const { return parent; }
-    void setParent(Object* parent) { this->parent = parent; }
+    virtual const Object* getParent() const final;
+    virtual void setParent(Object* parent) final;
 
     virtual bool isWidget() const = 0;
     virtual bool isWindow() const = 0;
 
+    virtual bool removeChild(const Object* child) final;
+    virtual bool addChild(const Object* child) final;
+
 protected:
-   std::set<const Object *> children;
+    std::set<const Object *> children;
 
 private:
     Object *parent;

@@ -10,10 +10,10 @@ MainWindow::MainWindow() :
 }
 
 MainWindow::~MainWindow() {
-    delete background;
+    /*delete background;
     delete statusBar;
     if (centralWidget)
-        delete centralWidget;
+        delete centralWidget;*/
 }
 
 int MainWindow::draw(){
