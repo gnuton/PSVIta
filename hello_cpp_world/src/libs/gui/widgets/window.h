@@ -21,7 +21,6 @@ public:
            unsigned int priority = PriorityLevel::Normal);
     virtual ~Window();
 
-    int draw() override;
     virtual bool isWidget() const { return true; }
     virtual bool isWindow() const { return true; }
 };

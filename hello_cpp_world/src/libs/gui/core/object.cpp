@@ -24,14 +24,14 @@ void Object::setParent(Object* parent) {
         this->parent->addChild(this);
 }
 
-bool Object::removeChild(const Object* child) {
+bool Object::removeChild(Object* child) {
     if (!child)
         return false;
     else
         return this->children.erase(child);
 }
 
-bool Object::addChild(const Object* child) {
+bool Object::addChild(Object* child) {
     if (!child)
         return false;
     this->children.insert(child);

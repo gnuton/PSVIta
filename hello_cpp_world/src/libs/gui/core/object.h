@@ -23,11 +23,11 @@ public:
     virtual bool isWidget() const = 0;
     virtual bool isWindow() const = 0;
 
-    virtual bool removeChild(const Object* child) final;
-    virtual bool addChild(const Object* child) final;
+    virtual bool removeChild(Object* child) final;
+    virtual bool addChild(Object* child) final;
 
 protected:
-    std::set<const Object *> children;
+    std::set<Object *> children;
 
 private:
     Object *parent;

@@ -9,7 +9,7 @@ Background::Background(View* parent) :
          SCREEN_HEIGHT,
          SCREEN_WIDTH,
          parent ? parent->getPriority() : PriorityLevel::Min),
-	img_bg(Texture(&_binary_assets_spr_img_bg_png_start))
+    img_bg(Texture(&_binary_assets_spr_img_bg_png_start))
 {
 }
 
@@ -18,6 +18,6 @@ int Background::draw()
     if (!this->isVisible())
         return -1;
 
-    img_bg.Draw(this->pos);
+    img_bg.Draw(pos);
 	return 0;
 }

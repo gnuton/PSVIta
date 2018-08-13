@@ -13,9 +13,18 @@ View::View(View* parent, const Point& pos, int height, int width, unsigned int p
 View::~View() {}
 
 int View::handleInput(const Input& input) {
-    return 0;
+
+    for (auto child : children) {
+        View* v = static_cast<View*>(child);
+        if (v && v->hasFocus())
+            v->handleInput(input);
+    }
 }
 
 int View::draw() {
-    return 0;
+    for (auto child : children) {
+        View* v = static_cast<View*>(child);
+        if (v && v->isVisible())
+            v->draw();
+    }
 }

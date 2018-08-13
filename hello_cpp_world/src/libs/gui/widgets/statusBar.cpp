@@ -23,6 +23,7 @@ StatusBar::StatusBar(View* parent) :
     img_statsbar_battery(Texture(&_binary_assets_spr_img_statsbar_battery_png_start)),
     img_statsbar_battery_charge(Texture(&_binary_assets_spr_img_statsbar_battery_charge_png_start))
 {
+    this->setFocus(false);
 }
 
 

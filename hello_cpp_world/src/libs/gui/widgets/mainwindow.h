@@ -6,16 +6,17 @@
 
 /**
  * @brief The MainWindow class
- * Main window have activty as parent class.
- * They have a background, a status bar and can
- * host multiple widgets.
+ * Main window are top level widgets which occupy the full screen.
+ * As other windows, they are handled by the activity class which always is their parent.
+ * Usually one application should have a single mainwindow class, but that's not enforced.
+ * You want to use this covinient class if you want a window with a background,
+ * a status bar and that can host multiple widgets in its central widget.
  */
 class MainWindow : public Window
 {
 public:
     MainWindow();
     virtual ~MainWindow();
-    int draw() override;
 
     virtual bool isWidget() const { return true; }
     virtual bool isWindow() const { return true; }

@@ -6,7 +6,13 @@
 #include "view.h"
 #include "font.h"
 #include "constants/screen.h"
-
+/**
+ * @brief The StatusBar class
+ * Displays a status bar similar to the system one.
+ * It can give information to the user like app name,
+ * battery status and current time.
+ * It never gets the focus, so it cannot handle input.
+ */
 class StatusBar: public View {
 public:
     StatusBar(View* parent = NULL);

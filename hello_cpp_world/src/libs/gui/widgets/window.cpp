@@ -17,7 +17,3 @@ Window::Window(View *parent,
 Window::~Window() {
 }
 
-
-int Window::draw() {
-    return 0;
-}

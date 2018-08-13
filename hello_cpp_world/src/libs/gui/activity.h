@@ -24,7 +24,7 @@ public:
 
 private:
     Activity();
-    std::mutex mtx_;
+    std::mutex mtx;
     std::vector<std::shared_ptr<Window>> windows_;
     std::vector<std::shared_ptr<Window>> windows_queue;
 };

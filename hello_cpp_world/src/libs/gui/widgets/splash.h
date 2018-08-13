@@ -12,6 +12,13 @@ typedef enum {
     STEP_FADING_OUT,
 } SplashStep;
 
+/**
+ * @brief The Splash class
+ * Displays a splash screen.
+ * It can handle multiple splash screen shown sequentially
+ * one of the other.
+ * Its focus is set to false, which means it cannot handle input.
+ */
 class Splash : public Window
 {
 public:

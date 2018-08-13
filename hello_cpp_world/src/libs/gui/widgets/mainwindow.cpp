@@ -10,18 +10,6 @@ MainWindow::MainWindow() :
 }
 
 MainWindow::~MainWindow() {
-    /*delete background;
-    delete statusBar;
-    if (centralWidget)
-        delete centralWidget;*/
 }
 
-int MainWindow::draw(){
-    if (!this->isVisible())
-        return -1;
-    background->draw();
-    statusBar->draw();
-    if (centralWidget)
-        centralWidget->draw();
-    return 0;
-}
+

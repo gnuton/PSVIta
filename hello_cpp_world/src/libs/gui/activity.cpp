@@ -14,7 +14,7 @@ Activity::~Activity(){
 
 int Activity::handleInput(const Input& input)
 {
-    std::lock_guard<std::mutex> lock(mtx_);
+    std::lock_guard<std::mutex> lock(mtx);
 
     if (windows_.size() > 1) {
         for (auto it = begin(windows_), it_last = --end(windows_); it != it_last; ) {
@@ -43,7 +43,7 @@ int Activity::handleInput(const Input& input)
 
 int Activity::draw()
 {
-    std::lock_guard<std::mutex> lock(mtx_);
+    std::lock_guard<std::mutex> lock(mtx);
 
     if (windows_.empty()) return 0;
 
@@ -57,13 +57,13 @@ int Activity::draw()
 
 void Activity::AddWindow(std::shared_ptr<Window> window)
 {
-    std::lock_guard<std::mutex> lock(mtx_);
+    std::lock_guard<std::mutex> lock(mtx);
     windows_queue.push_back(window);
 }
 
 void Activity::FlushQueue()
 {
-    std::lock_guard<std::mutex> lock(mtx_);
+    std::lock_guard<std::mutex> lock(mtx);
 
     std::move(windows_queue.begin(), windows_queue.end(), std::back_inserter(windows_));
     windows_queue.erase(windows_queue.begin(),windows_queue.end());
@@ -74,6 +74,6 @@ void Activity::FlushQueue()
 
 bool Activity::HasActivity()
 {
-    std::lock_guard<std::mutex> lock(mtx_);
+    std::lock_guard<std::mutex> lock(mtx);
     return !windows_.empty();
 }

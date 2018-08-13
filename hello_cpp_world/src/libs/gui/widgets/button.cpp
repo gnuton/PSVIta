@@ -1,6 +1,8 @@
 #include "button.h"
 #include <vita2d.h>
 #include "constants/color.h"
+#include "logger.h"
+#include <sstream>
 
 Button::Button(View* parent,
                const std::string& text,
@@ -21,7 +23,13 @@ Button::~Button() {
 }
 
 int Button::handleInput(const Input& input) {
-    input.TouchInRectangle(this->getRectangleArea());
+    {
+        std::ostringstream s;
+        s << "Input got: " << input.TouchInRectangle(this->getRectangleArea());
+        Logger::get_instance()->Log(LoggerFormat::debug, s.str());
+
+    }
+    return input.TouchInRectangle(this->getRectangleArea());
 }
 
 int Button::draw() {

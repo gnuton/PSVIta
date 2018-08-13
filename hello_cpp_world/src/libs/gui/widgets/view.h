@@ -50,8 +50,11 @@ public:
         this->height = area.bottomRight.y - this->pos.y;
     }
 
-    const int isVisible() const { return visible; }
+    const bool isVisible() const { return visible; }
     void setVisibility(const bool visible) { this->visible = visible; }
+
+    const bool hasFocus() const { return focus; }
+    void setFocus(const bool focus) { this->focus = focus; }
 
 protected:
     enum PriorityLevel { Min = 0, Normal = 100, Max= 256 };
@@ -63,5 +66,6 @@ protected:
     int height;
     int width;
     bool visible = true;
+    bool focus = true;
 };
 #endif
