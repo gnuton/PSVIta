@@ -107,6 +107,7 @@ target_link_libraries(
     SceNetCtl_stub
     freetype
     ScePower_stub
+    SceRegistryMgr_stub
 )
 
 

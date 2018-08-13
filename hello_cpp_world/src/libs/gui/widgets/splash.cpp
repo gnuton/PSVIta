@@ -1,6 +1,6 @@
 #include "splash.h"
 
-#include <texture.h>
+#include <Texture.h>
 #include <algorithm>
 #include "constants/screen.h"
 

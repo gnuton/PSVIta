@@ -9,7 +9,7 @@
 #include <psp2/ctrl.h>
 #include <vita2d.h>
 #include <algorithm>
-#include "shapes.h"
+#include "Shapes.h"
 
 void DeleteTexture(vita2d_texture* tex);
 

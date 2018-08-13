@@ -1,8 +1,8 @@
 #ifndef APP_H
 #define APP_H
 
-#include "activity.h"
-#include "logger.h"
+#include "Activity.h"
+#include "Logger.h"
 #include <memory>
 
 class App {

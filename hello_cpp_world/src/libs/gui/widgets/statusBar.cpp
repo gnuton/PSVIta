@@ -3,8 +3,8 @@
 #include <psp2/power.h>
 #include <psp2/rtc.h>
 
-#include "utils.h"
-#include "font.h"
+#include "Utils.h"
+#include "Font.h"
 
 #include "constants/color.h"
 #include "constants/screen.h"

@@ -1,6 +1,6 @@
 #ifndef BACKGROUND_H
 #define BACKGROUND_H
-#include <texture.h>
+#include <Texture.h>
 #include "view.h"
 
 class Background : public View

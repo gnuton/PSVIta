@@ -1,7 +1,7 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 #include "view.h"
-#include "input.h"
+#include "Input.h"
 #include <string>
 
 class Button : public View

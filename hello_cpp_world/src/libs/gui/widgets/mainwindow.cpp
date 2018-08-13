@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "activity.h"
+#include "Activity.h"
 
 MainWindow::MainWindow() :
     Window(Activity::get_instance()),

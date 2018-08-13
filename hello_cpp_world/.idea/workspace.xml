@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="hello_cpp_world" targetName="hello_cpp_world" />
+      <config projectName="hello_cpp_world" targetName="hello_cpp_world.self" />
+      <config projectName="hello_cpp_world" targetName="hello_cpp_world.vpk" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="VITASDK" value="/usr/local/vitasdk" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e7e5b40-85f3-4fed-a610-f20a11c19194" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/activity.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Activity.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/activity.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Activity.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/app.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/App.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/app.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/App.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/font.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Font.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/font.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Font.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/input.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Input.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/input.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Input.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Logger.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Logger.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/shapes.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Shapes.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/shapes.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Shapes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/singleton.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Singleton.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/splash_thread.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/SplashThread.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/splash_thread.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/SplashThread.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/texture.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Texture.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/texture.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Texture.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/unordered_map_pair_hash.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/UnorderedMapPairHash.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/Utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/background.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/background.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/button.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/button.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/button.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/button.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/mainwindow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/splash.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/splash.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/splash.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/splash.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/statusBar.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/statusBar.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/statusBar.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/statusBar.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libs/gui/widgets/view.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/libs/gui/widgets/view.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1305191306">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="hpp" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="ObjectiveC" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="hpp" value="41" />
+          <entry key="txt" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CMakeLists.txt" value="2" />
+          <entry key="ObjectiveC" value="41" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/libs/gui/input/VitaTouch.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
+              <folding>
+                <element signature="e#45#68#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/libs/gui/input/VitaPad.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-8">
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/libs/gui/input/VitaTouch.hpp" />
+        <option value="$PROJECT_DIR$/src/libs/gui/input/VitaPad.hpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="122" />
+    <option name="y" value="27" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>C/C++</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Code style issuesCSS</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>DOM issuesJavaScript</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralC/C++</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralObjective-C</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Objective-C</id>
+          </State>
+          <State>
+            <id>Probable bugsCSS</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Unused codeC/C++</id>
+          </State>
+          <State>
+            <id>YAML</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="hello_cpp_world" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_cpp_world" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello_cpp_world" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_cpp_world" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello_cpp_world" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_cpp_world" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello_cpp_world" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_cpp_world" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hello_cpp_world" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hello_cpp_world" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.hello_cpp_world">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hello_cpp_world" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hello_cpp_world" TARGET_NAME="hello_cpp_world" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="hello_cpp_world" RUN_TARGET_NAME="hello_cpp_world">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hello_cpp_world.self" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hello_cpp_world" TARGET_NAME="hello_cpp_world.self" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="hello_cpp_world.vpk" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="hello_cpp_world" TARGET_NAME="hello_cpp_world.vpk" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.hello_cpp_world" />
+      <item itemvalue="Application.hello_cpp_world.self" />
+      <item itemvalue="Application.hello_cpp_world.vpk" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e7e5b40-85f3-4fed-a610-f20a11c19194" name="Default Changelist" comment="" />
+      <created>1534188039915</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1534188039915</updated>
+      <workItem from="1534188044594" duration="72000" />
+      <workItem from="1534190661077" duration="1218000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1290000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1920" height="1055" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18303095" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.32972974" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="LuaJ" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/libs/gui/input/VitaTouch.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#45#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/libs/gui/input/VitaPad.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="109" column="4" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

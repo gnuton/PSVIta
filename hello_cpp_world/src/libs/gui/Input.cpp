@@ -1,12 +1,12 @@
-#include "input.h"
+#include "Input.h"
 
 #include <math.h>
 #include <string.h>
 
 #include "constants/screen.h"
 #include "constants/touch.h"
-#include "utils.h"
-#include "logger.h"
+#include "Utils.h"
+#include "Logger.h"
 
 Input::Input()
 {

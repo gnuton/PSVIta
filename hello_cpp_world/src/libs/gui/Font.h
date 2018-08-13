@@ -1,10 +1,10 @@
 #ifndef FONT_H
 #define FONT_H
 
-#include "shapes.h"
+#include "Shapes.h"
 #include "constants/color.h"
 #include <unordered_map>
-#include "unordered_map_pair_hash.h"
+#include "UnorderedMapPairHash.h"
 
 class Font {
 public:

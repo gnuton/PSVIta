@@ -1,4 +1,4 @@
-#include "splash_thread.h"
+#include "SplashThread.h"
 
 #include <psp2/kernel/modulemgr.h>
 #include <psp2/kernel/threadmgr.h>

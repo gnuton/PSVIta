@@ -2,9 +2,9 @@
 #define STATUSBAR_H
 #pragma once
 
-#include <texture.h>
+#include <Texture.h>
 #include "view.h"
-#include "font.h"
+#include "Font.h"
 #include "constants/screen.h"
 /**
  * @brief The StatusBar class

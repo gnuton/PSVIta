@@ -4,7 +4,7 @@
 #include <string>
 #include <map>
 
-#include "singleton.h"
+#include "Singleton.h"
 
 enum LoggerFormat { debug, info, warning, error };
 

@@ -1,4 +1,4 @@
-#include "activity.h"
+#include "Activity.h"
 #include <algorithm>
 
 #include "constants/screen.h"

@@ -1,9 +1,9 @@
-#include "app.h"
+#include "App.h"
 #include <psp2/kernel/processmgr.h>
 #include <psp2/display.h>
 #include <vita2d.h>
 #include "widgets/splash.h"
-#include "input.h"
+#include "Input.h"
 
 App::App(){
     vita2d_init();

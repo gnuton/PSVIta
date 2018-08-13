@@ -4,7 +4,7 @@
 #include <string>
 #include <cstdio>
 #include <map>
-#include "app.h"
+#include "App.h"
 #include "widgets/mainwindow.h"
 #include "myappcentralwidget.h"
 
