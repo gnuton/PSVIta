@@ -1,7 +1,7 @@
 #include "Activity.h"
 #include <algorithm>
 
-#include "constants/screen.h"
+#include "constants/Screen.h"
 
 Activity::Activity() :
     View(NULL, Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Normal)

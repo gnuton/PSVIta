@@ -1,7 +1,7 @@
 #ifndef WINDOW_H
 #define WINDOW_H
 #include "view.h"
-#include "constants/screen.h"
+#include "constants/Screen.h"
 
 /**
  * @brief The Window class

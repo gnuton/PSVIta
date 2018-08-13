@@ -3,10 +3,10 @@
 #include <math.h>
 #include <string.h>
 
-#include "constants/screen.h"
-#include "constants/touch.h"
-#include "Utils.h"
-#include "Logger.h"
+#include "constants/Screen.h"
+#include "constants/Touch.h"
+#include "utils/Utils.h"
+#include "utils/Logger.h"
 
 Input::Input()
 {

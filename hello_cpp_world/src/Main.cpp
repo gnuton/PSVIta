@@ -6,7 +6,7 @@
 #include <map>
 #include "App.h"
 #include "widgets/mainwindow.h"
-#include "myappcentralwidget.h"
+#include "MyAppCentralWidget.h"
 
 int main(int argc, char *argv[]) {
   auto app = App();

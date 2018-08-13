@@ -1,7 +1,7 @@
 #ifndef SPLASH_H
 #define SPLASH_H
 
-#include <Texture.h>
+#include <core/Texture.h>
 #include "window.h"
 
 #pragma once

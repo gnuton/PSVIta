@@ -2,9 +2,9 @@
 #define FONT_H
 
 #include "Shapes.h"
-#include "constants/color.h"
+#include "constants/Color.h"
 #include <unordered_map>
-#include "UnorderedMapPairHash.h"
+#include "utils/UnorderedMapPairHash.h"
 
 class Font {
 public:

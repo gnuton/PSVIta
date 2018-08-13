@@ -1,8 +1,8 @@
 #include "splash.h"
 
-#include <Texture.h>
+#include <core/Texture.h>
 #include <algorithm>
-#include "constants/screen.h"
+#include "constants/Screen.h"
 
 extern unsigned char _binary_assets_spr_img_splash_png_start;
 extern unsigned char _binary_assets_spr_gekihen_splash_png_start;

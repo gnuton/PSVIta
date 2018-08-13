@@ -3,7 +3,7 @@
 
 #include <psp2/touch.h>
 #include <string.h>
-#include <core/mathtools.hpp>
+#include <core/Mathtools.hpp>
 
 #define SLEEP_CLICK_NORMAL 150000
 #define SLEEP_CLICK_EXTENDED 350000

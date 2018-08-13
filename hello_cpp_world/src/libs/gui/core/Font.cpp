@@ -2,7 +2,7 @@
 #include <vita2d.h>
 #include <sstream>
 #include <string>
-#include "Logger.h"
+#include "utils/Logger.h"
 
 std::unordered_map<std::pair<std::string, unsigned int>, vita2d_font*> Font::fontCache;
 

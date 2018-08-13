@@ -1,4 +1,4 @@
-#include "myappcentralwidget.h"
+#include "MyAppCentralWidget.h"
 #include "widgets/button.h"
 
 MyAppCentralWidget::MyAppCentralWidget(View* parent):

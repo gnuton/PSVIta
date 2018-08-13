@@ -1,5 +1,5 @@
 #include "background.h"
-#include <constants/screen.h>
+#include <constants/Screen.h>
 
 extern unsigned char _binary_assets_spr_img_bg_png_start;
 

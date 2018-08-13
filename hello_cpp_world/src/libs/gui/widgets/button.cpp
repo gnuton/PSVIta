@@ -1,7 +1,7 @@
 #include "button.h"
 #include <vita2d.h>
-#include "constants/color.h"
-#include "Logger.h"
+#include "constants/Color.h"
+#include "utils/Logger.h"
 #include <sstream>
 
 Button::Button(View* parent,

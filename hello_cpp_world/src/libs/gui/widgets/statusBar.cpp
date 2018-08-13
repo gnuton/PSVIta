@@ -3,11 +3,11 @@
 #include <psp2/power.h>
 #include <psp2/rtc.h>
 
-#include "Utils.h"
-#include "Font.h"
+#include "utils/Utils.h"
+#include "core/Font.h"
 
-#include "constants/color.h"
-#include "constants/screen.h"
+#include "constants/Color.h"
+#include "constants/Screen.h"
 
 extern unsigned char _binary_assets_spr_img_statsbar_battery_png_start;
 extern unsigned char _binary_assets_spr_img_statsbar_battery_charge_png_start;

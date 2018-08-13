@@ -1,8 +1,8 @@
 #ifndef INPUT_H
 #define INPUT_H
 
-#include <Shapes.h>
-#include "Texture.h"
+#include <core/Shapes.h>
+#include "core/Texture.h"
 
 #pragma once
 
