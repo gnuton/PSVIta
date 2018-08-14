@@ -4,6 +4,19 @@
 #include <string>
 #include <core/Signal.h>
 
+/**
+ *  Button
+ *  Thi class represent a basic button widget.
+ *
+ *  Usage:
+ *  Once you have instantiated this class you can connect its onClicked signal to the function (slot) which
+ *  will be triggered by the onClicked event.
+ *  eg:    button->onClick.connectMember(pointer_to_instance_with_the_slot, &instante_with_the_slot::onButtonClicked);
+ *
+ *  Signals:
+ *   - onClicked()
+ *
+ */
 class Button : public View
 {
 public:
