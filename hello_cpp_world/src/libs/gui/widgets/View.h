@@ -1,7 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
 #include "core/Object.h"
-#include "core/Shapes.h"
+#include "core/Geometry.h"
 
 /**
  * @brief the View class

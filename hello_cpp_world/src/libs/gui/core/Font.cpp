@@ -1,30 +1,25 @@
 #include "Font.h"
 #include <vita2d.h>
-#include <sstream>
 #include <string>
 #include "utils/Logger.h"
 
 std::unordered_map<std::pair<std::string, unsigned int>, vita2d_font*> Font::fontCache;
 
 Font::Font(const std::string &path, unsigned int fSize) {
-    {
-        std::stringstream msg;
-        msg << "Looking for size "<< fSize << ", path: " << path.c_str();
-      Logger::getInstance()->Log(LoggerFormat::debug, msg.str());
-    }
+    Logger::getInstance()->Debug(FORMAT("Looking for size "<< fSize << ", path: " << path.c_str()));
     auto key = std::make_pair(path, fSize);
     if (fontCache[key]) {
-      Logger::getInstance()->Log(LoggerFormat::debug,"Found it in cache");
+      Logger::getInstance()->Debug("Found it in cache");
         this->font = fontCache[key];
         this->size = fSize;
         return;
     }
     this->font = vita2d_load_font_file(path.c_str());
     if (!this->font){
-      Logger::getInstance()->Log(LoggerFormat::warning, "Font not loaded!!!");
+      Logger::getInstance()->Warning( "Font not loaded!!!");
         std::abort();
     }
-  Logger::getInstance()->Log(LoggerFormat::debug, "Storing in cache...");
+  Logger::getInstance()->Debug( "Storing in cache...");
     fontCache[key] = this->font;
     size = fSize;
 }

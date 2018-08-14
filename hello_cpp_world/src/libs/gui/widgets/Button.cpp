@@ -2,7 +2,7 @@
 #include <vita2d.h>
 #include "constants/Color.h"
 #include "utils/Logger.h"
-#include <sstream>
+#include <input/VitaTouch.h>
 
 Button::Button(View* parent,
                const std::string& text,
@@ -23,18 +23,16 @@ Button::~Button() {
 }
 
 int Button::handleInput() {
-    {
-        //std::ostringstream s;
-        //s << "Input got: " << input.TouchInRectangle(this->getRectangleArea());
-        //Logger::getInstance()->Log(LoggerFormat::debug, s.str());
-
-    }
-    //return input.TouchInRectangle(this->getRectangleArea());
+  if (this->touch->clicking && this->getRectangleArea().isInside(this->touch->lastClickPoint)) {
+    Logger::getInstance()->Debug(FORMAT("Button has been clicked" << this->touch->lastClickPoint.x << ":"  << this->touch->lastClickPoint.y));
     return 0;
+  }
+  return -1;
 }
 
 void Button::draw() {
     // Background
+
     vita2d_draw_rectangle(this->pos.x, this->pos.y, this->width, this->height, Color::Red);
 
     // font_22.Draw(Point(15, 22), "Vita HomeBrew Browser", Color::White);

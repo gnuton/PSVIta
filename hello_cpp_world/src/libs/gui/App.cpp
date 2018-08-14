@@ -17,11 +17,11 @@ App::App():
     vita2d_set_clear_color(RGBA8(0x40, 0x40, 0x40, 0xFF));
     //NOTE: Activity is a view and required pad and touch instances. Hence it must be instantiated after them
     this->activity = Activity::createInstance();
-    this->logger->Log(debug, "Initializing App");
+    this->logger->Debug("Initializing App");
 }
 
 App::~App(){
-    this->logger->Log(LoggerFormat::debug, "Destroying App");
+    this->logger->Debug( "Destroying App");
     this->activity->FlushQueue();
 
     //TODO Delete should be automatically handled by the object tree. for this to happen App and everything else should be an object
@@ -34,7 +34,7 @@ App::~App(){
 }
 
 void App::run(){
-    this->logger->Log(LoggerFormat::debug, "Starting main loop");
+    this->logger->Debug("Starting main loop");
 
     while (1) {
         vita2d_start_drawing();
@@ -58,7 +58,7 @@ void App::AddWindow(std::shared_ptr<Window> window){
 }
 
 void App::showSplashScreen(){
-    this->logger->Log(LoggerFormat::debug, "Showing splash screen");
+    this->logger->Debug( "Showing splash screen");
 
     auto splash = std::make_shared<Splash>(this->activity);
     this->activity->AddWindow(splash);

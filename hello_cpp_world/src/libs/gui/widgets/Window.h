@@ -9,6 +9,9 @@
  * A Window is just a container for widgets (views).
  * It's the parent of its views.
  * It's handled by the activity instance.
+ *
+ * Widgets in the window can register for key press events.
+ * Key press events are sent by the Vita pad.
  */
 
 class Window : public View

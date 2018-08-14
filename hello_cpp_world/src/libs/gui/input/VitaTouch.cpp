@@ -1,9 +1,10 @@
 #include "VitaTouch.h"
 #include <stdlib.h>
+#include "core/Geometry.h"
 
 
-VitaTouch::VitaTouch() {
-  emptyClickPoint.x = emptyClickPoint.y = 0;
+VitaTouch::VitaTouch()
+{
   initTouch();
 }
 
@@ -17,8 +18,7 @@ void VitaTouch::initTouch() {
 
 void VitaTouch::readTouch() {
   memcpy(touch_old, touch, sizeof(touch_old));
-  int port;
-  for (port = 0; port < SCE_TOUCH_PORT_MAX_NUM; port++) {
+  for (int port = 0; port < SCE_TOUCH_PORT_MAX_NUM; port++) {
     sceTouchPeek(port, &touch[port], 1);
   }
   if (touch_old[SCE_TOUCH_PORT_FRONT].reportNum >= 1 && touch[SCE_TOUCH_PORT_FRONT].reportNum == 0) {
@@ -55,10 +55,9 @@ void VitaTouch::readTouch() {
   }
 }
 
-vector2 VitaTouch::getClickPoint() {
+Point VitaTouch::getClickPoint() {
   return lastClickPoint;
 }
-
 
 
 

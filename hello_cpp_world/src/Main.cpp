@@ -1,5 +1,4 @@
 #include <psp2/kernel/processmgr.h>
-#include <sstream>
 #include <vector>
 #include <string>
 #include <cstdio>

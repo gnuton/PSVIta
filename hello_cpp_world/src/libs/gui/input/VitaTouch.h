@@ -5,6 +5,7 @@
 #include <string.h>
 #include <utils/Vectors.h>
 #include <utils/Singleton.h>
+#include <core/Geometry.h>
 
 #define SLEEP_CLICK_NORMAL 150000
 #define SLEEP_CLICK_EXTENDED 350000
@@ -21,16 +22,15 @@ class VitaTouch : public Singleton<VitaTouch> {
   VitaTouch();
 
 public:
-
   void readTouch();
 
   SceTouchData touch_old[SCE_TOUCH_PORT_MAX_NUM];
   SceTouchData touch[SCE_TOUCH_PORT_MAX_NUM];
 
-  vector2 getClickPoint();
+  Point getClickPoint();
 
-  vector2 lastClickPoint;
-  vector2 lastTouchPoint;
+  Point lastClickPoint;
+  Point lastTouchPoint;
   bool clicking;
   bool scrolling;
   int scrollDirX;
@@ -39,8 +39,7 @@ public:
 private:
   void initTouch();
 
-  vector2 emptyClickPoint;
-
+  Point emptyClickPoint;
 };
 
 #endif
