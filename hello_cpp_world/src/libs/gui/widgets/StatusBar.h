@@ -16,7 +16,7 @@
 class StatusBar: public View {
 public:
     StatusBar(View* parent = NULL);
-    int draw() override;
+    void draw() override;
 
 private:
     Font font_22;

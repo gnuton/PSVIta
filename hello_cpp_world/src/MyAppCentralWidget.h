@@ -8,7 +8,7 @@ class MyAppCentralWidget : public View
 {
 public:
     MyAppCentralWidget(View* parent);
-    int draw() override;
+    void draw() override;
 
 private:
     Button *button;

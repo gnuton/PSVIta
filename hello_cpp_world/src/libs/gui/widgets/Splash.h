@@ -24,7 +24,7 @@ class Splash : public Window
 public:
     Splash(View* parent = NULL);
 
-    int draw() override;
+    void draw() override;
 private:
     unsigned int splash_index = 0;
     SplashStep step = STEP_FADING_IN;

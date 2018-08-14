@@ -16,11 +16,8 @@ Splash::Splash(View* parent) :
     this->setFocus(false);
 }
 
-int Splash::draw()
+void Splash::draw()
 {
-    if (!this->isVisible())
-        return -1;
-
     Texture splashes[] = {
         vhbb_splash,
         gekihen_splash
@@ -28,7 +25,7 @@ int Splash::draw()
 
     if (splash_index >= 2) {
         request_destroy = true;
-        return true;
+        return;
     }
 
     splashes[splash_index].DrawExt(Point(0, 0), alpha);
@@ -59,6 +56,4 @@ int Splash::draw()
     default:
         break;
     }
-
-    return 0;
 }

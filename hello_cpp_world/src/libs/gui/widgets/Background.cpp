@@ -13,11 +13,7 @@ Background::Background(View* parent) :
 {
 }
 
-int Background::draw()
+void Background::draw()
 {
-    if (!this->isVisible())
-        return -1;
-
     img_bg.Draw(pos);
-	return 0;
 }

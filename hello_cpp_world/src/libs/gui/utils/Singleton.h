@@ -1,8 +1,6 @@
 #ifndef SINGLETON_H
 #define SINGLETON_H
 
-#pragma once
-
 #include <utility>
 #include <stdexcept>
 
@@ -10,28 +8,29 @@ template <class T>
 class Singleton{
 public:
     template <typename... Args>
-    static T* create_instance(Args... args){
-        if (!instance_)
-            instance_ = new T(std::forward<Args>(args)...);
-        return instance_;
+    static T* createInstance(Args... args){
+        if (!instance)
+            instance = new T(std::forward<Args>(args)...);
+        return instance;
     }
 
-    static T* get_instance(){
-        if (!instance_)
+    static T* getInstance(){
+        if (!instance)
             throw std::runtime_error("Accessed singleton before that instance is created");
-        return instance_;
+
+        return instance;
     }
 
 
-    static void destroy_instance(){
-        delete instance_;
-        instance_ = nullptr;
+    static void destroyInstance(){
+        delete instance;
+        instance = nullptr;
     }
 
 private:
-    static T* instance_;
+    static T* instance;
 };
 
-template <class T> T*  Singleton<T>::instance_ = nullptr;
+template <class T> T*  Singleton<T>::instance = nullptr;
 
 #endif

@@ -7,10 +7,7 @@ ListView::ListView(View* parent):
 
 }
 
-int ListView::draw() {
-    if (!this->isVisible())
-        return -1;
+void ListView::draw() {
     // Background
     // vita2d_draw_rectangle(0, 0, SCREEN_WIDTH, STATUSBAR_HEIGHT, Color::Red);
-    return 0;
 }

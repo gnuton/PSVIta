@@ -7,7 +7,7 @@ class ListView : public View
 {
 public:
     ListView(View* parent);
-    int draw() override;
+    void draw() override;
 };
 
 #endif // LISTVIEW_H

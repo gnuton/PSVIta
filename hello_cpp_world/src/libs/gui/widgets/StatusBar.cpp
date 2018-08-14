@@ -27,10 +27,8 @@ StatusBar::StatusBar(View* parent) :
 }
 
 
-int StatusBar::draw()
+void StatusBar::draw()
 {
-    if (!this->isVisible())
-        return -1;
     // Background
     vita2d_draw_rectangle(this->pos.x, this->pos.y, this->width, this->height, Color::Black);
 
@@ -38,8 +36,6 @@ int StatusBar::draw()
 
     displayBattery();
     displayDate();
-
-    return 0;
 }
 
 

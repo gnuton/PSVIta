@@ -8,7 +8,7 @@ class Background : public View
 public:
     Background(View *parent);
 
-    int draw() override;
+    void draw() override;
 private:
 	Texture img_bg;
 };

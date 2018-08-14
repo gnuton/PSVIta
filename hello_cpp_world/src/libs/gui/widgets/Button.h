@@ -12,7 +12,7 @@ public:
            int height=0,
            int width = 0);
     virtual ~Button();
-    int draw() override;
+    void draw() override;
     int handleInput();
 
     const std::string getLabel() const{ return label; }

@@ -41,17 +41,15 @@ int Activity::handleInput()
 }
 
 
-int Activity::draw()
+void Activity::draw()
 {
     std::lock_guard<std::mutex> lock(mtx);
 
-    if (windows_.empty()) return 0;
+    if (windows_.empty()) return;
 
     for (auto it = begin(windows_), it_last = end(windows_); it != it_last; ++it) {
         (*it)->draw();
     }
-
-    return 0;
 }
 
 

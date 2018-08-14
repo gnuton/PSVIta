@@ -8,25 +8,27 @@
 #include "widgets/Activity.h"
 #include "utils/Logger.h"
 
-App::App(){
+App::App():
+    logger(Logger::createInstance()),
+    pad(VitaPad::createInstance()),
+    touch(VitaTouch::createInstance())
+{
     vita2d_init();
     vita2d_set_clear_color(RGBA8(0x40, 0x40, 0x40, 0xFF));
-    this->activity = Activity::create_instance();
-    this->logger = Logger::create_instance();
-    this->pad = VitaPad::create_instance();
-    this->touch = VitaTouch::create_instance();
+    //NOTE: Activity is a view and required pad and touch instances. Hence it must be instantiated after them
+    this->activity = Activity::createInstance();
     this->logger->Log(debug, "Initializing App");
 }
 
 App::~App(){
     this->logger->Log(LoggerFormat::debug, "Destroying App");
     this->activity->FlushQueue();
-    delete this->activity;
-    this->activity = NULL;
+
     //TODO Delete should be automatically handled by the object tree. for this to happen App and everything else should be an object
-    delete this->logger;
-    delete this->pad;
-    delete this->touch;
+    this->activity->destroyInstance();
+    this->touch->destroyInstance();
+    this->pad->destroyInstance();
+    this->logger->destroyInstance();
 
     sceKernelExitProcess(0);
 }

@@ -10,21 +10,21 @@ Font::Font(const std::string &path, unsigned int fSize) {
     {
         std::stringstream msg;
         msg << "Looking for size "<< fSize << ", path: " << path.c_str();
-        Logger::get_instance()->Log(LoggerFormat::debug, msg.str());
+      Logger::getInstance()->Log(LoggerFormat::debug, msg.str());
     }
     auto key = std::make_pair(path, fSize);
     if (fontCache[key]) {
-        Logger::get_instance()->Log(LoggerFormat::debug,"Found it in cache");
+      Logger::getInstance()->Log(LoggerFormat::debug,"Found it in cache");
         this->font = fontCache[key];
         this->size = fSize;
         return;
     }
     this->font = vita2d_load_font_file(path.c_str());
     if (!this->font){
-        Logger::get_instance()->Log(LoggerFormat::warning, "Font not loaded!!!");
+      Logger::getInstance()->Log(LoggerFormat::warning, "Font not loaded!!!");
         std::abort();
     }
-    Logger::get_instance()->Log(LoggerFormat::debug, "Storing in cache...");
+  Logger::getInstance()->Log(LoggerFormat::debug, "Storing in cache...");
     fontCache[key] = this->font;
     size = fSize;
 }

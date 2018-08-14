@@ -13,7 +13,7 @@ public:
     ~Activity();
 
     int handleInput();
-    int draw();
+    void draw();
 
     void AddWindow(std::shared_ptr<Window> window);
     void FlushQueue();

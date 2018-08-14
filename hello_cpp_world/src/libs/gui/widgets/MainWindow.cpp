@@ -2,7 +2,7 @@
 #include "Activity.h"
 
 MainWindow::MainWindow() :
-    Window(Activity::get_instance()),
+    Window(Activity::getInstance()),
     background(new Background(this)),
     centralWidget(new View(this)),
     statusBar(new StatusBar(this))

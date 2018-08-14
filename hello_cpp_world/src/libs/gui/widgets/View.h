@@ -13,6 +13,8 @@
  * Windows are handled by Activity class. (Naming is temporary since it will be cleaned ASAP).
  */
 
+ class VitaTouch;
+ class VitaPad;
 
 class View : public Object
 {
@@ -25,7 +27,7 @@ public:
     virtual ~View();
 
     virtual int handleInput();
-    virtual int draw();
+    virtual void draw();
 
     virtual bool isWidget() const { return true; }
     virtual bool isWindow() const { return false; }
@@ -66,5 +68,7 @@ protected:
     int width;
     bool visible = true;
     bool focus = true;
+    VitaTouch *touch;
+    VitaPad *pad;
 };
 #endif

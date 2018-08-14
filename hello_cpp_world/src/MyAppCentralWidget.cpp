@@ -9,7 +9,6 @@ MyAppCentralWidget::MyAppCentralWidget(View* parent):
     button->setWidth(80);
 }
 
-int MyAppCentralWidget::draw() {
+void MyAppCentralWidget::draw() {
     button->draw();
-    return 0;
 }

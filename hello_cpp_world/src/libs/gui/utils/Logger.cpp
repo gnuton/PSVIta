@@ -25,12 +25,12 @@ void Logger::Log(LoggerFormat f, const std::string& msg){
 
 void Logger::TerminateLogger() {
 #ifdef DEBUGNET
-    Logger::get_instance()->Log(LoggerFormat::error, "Termingating app...");
+  Logger::getInstance()->Log(LoggerFormat::error, "Termingating app...");
     std::exception_ptr p = std::current_exception();
     try {
         std::rethrow_exception(p);
     } catch (const std::exception &e) {
-        Logger::get_instance()->Log(LoggerFormat::error, std::string("terminate() because of %s", e.what()));
+      Logger::getInstance()->Log(LoggerFormat::error, std::string("terminate() because of %s", e.what()));
     }
 #endif
 }
