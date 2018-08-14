@@ -22,12 +22,11 @@ Button::Button(View* parent,
 Button::~Button() {
 }
 
-int Button::handleInput() {
+void Button::handleInput() {
   if (this->touch->clicking && this->getRectangleArea().isInside(this->touch->lastClickPoint)) {
     Logger::getInstance()->Debug(FORMAT("Button has been clicked" << this->touch->lastClickPoint.x << ":"  << this->touch->lastClickPoint.y));
-    return 0;
+    return;
   }
-  return -1;
 }
 
 void Button::draw() {

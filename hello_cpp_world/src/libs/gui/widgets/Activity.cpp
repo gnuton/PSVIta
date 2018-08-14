@@ -12,7 +12,7 @@ Activity::~Activity(){
 }
 
 
-int Activity::handleInput()
+void Activity::handleInput()
 {
     std::lock_guard<std::mutex> lock(mtx);
 
@@ -27,7 +27,7 @@ int Activity::handleInput()
 
         }
     } else if (windows_.size() == 0) {
-        return 0;
+        return;
     }
 
     windows_.back()->handleInput();
@@ -37,7 +37,7 @@ int Activity::handleInput()
                                [](const std::shared_ptr<Window> &win) { return win->isDestroyable(); }),
                 windows_.end());
 
-    return 0;
+    return;
 }
 
 

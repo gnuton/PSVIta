@@ -12,7 +12,7 @@ class Activity: public Singleton<Activity>, public View {
 public:
     ~Activity();
 
-    int handleInput();
+    void handleInput();
     void draw();
 
     void AddWindow(std::shared_ptr<Window> window);

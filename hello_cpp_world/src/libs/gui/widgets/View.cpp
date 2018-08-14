@@ -16,7 +16,7 @@ View::View(View* parent, const Point& pos, int height, int width, unsigned int p
 
 View::~View() {}
 
-int View::handleInput() {
+void View::handleInput() {
     for (auto child : children) {
         View* v = static_cast<View*>(child);
         if (v && v->hasFocus())

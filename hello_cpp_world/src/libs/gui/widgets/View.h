@@ -26,7 +26,7 @@ public:
          unsigned int priority = 100);
     virtual ~View();
 
-    virtual int handleInput();
+    virtual void handleInput();
     virtual void draw();
 
     virtual bool isWidget() const { return true; }

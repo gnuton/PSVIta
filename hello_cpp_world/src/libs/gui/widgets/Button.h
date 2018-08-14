@@ -13,7 +13,7 @@ public:
            int width = 0);
     virtual ~Button();
     void draw() override;
-    int handleInput();
+    void handleInput();
 
     const std::string getLabel() const{ return label; }
     void setLabel(const std::string& label) { this->label = label; }
