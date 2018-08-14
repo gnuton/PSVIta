@@ -25,7 +25,8 @@ Button::~Button() {
 void Button::handleInput() {
   if (this->touch->clicking && this->getRectangleArea().isInside(this->touch->lastClickPoint)) {
     Logger::getInstance()->Debug(FORMAT("Button has been clicked" << this->touch->lastClickPoint.x << ":"  << this->touch->lastClickPoint.y));
-    return;
+    Logger::getInstance()->Debug("Emitting onClick");
+    onClick.emit();
   }
 }
 

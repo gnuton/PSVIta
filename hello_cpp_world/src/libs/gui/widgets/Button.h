@@ -2,6 +2,7 @@
 #define BUTTON_H
 #include "View.h"
 #include <string>
+#include <core/Signal.h>
 
 class Button : public View
 {
@@ -17,6 +18,8 @@ public:
 
     const std::string getLabel() const{ return label; }
     void setLabel(const std::string& label) { this->label = label; }
+
+    Signal<> onClick;
 
 private:
     std::string label;

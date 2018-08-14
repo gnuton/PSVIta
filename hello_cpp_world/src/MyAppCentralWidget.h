@@ -10,6 +10,8 @@ public:
     MyAppCentralWidget(View* parent);
     void draw() override;
 
+    void onButtonClicked();
+
 private:
     Button *button;
 };
