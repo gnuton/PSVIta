@@ -1,4 +1,4 @@
-#include "view.h"
+#include "View.h"
 
 View::View(View* parent, const Point& pos, int height, int width, unsigned int priority):
     Object(parent),
@@ -12,12 +12,11 @@ View::View(View* parent, const Point& pos, int height, int width, unsigned int p
 
 View::~View() {}
 
-int View::handleInput(const Input& input) {
-
+int View::handleInput() {
     for (auto child : children) {
         View* v = static_cast<View*>(child);
         if (v && v->hasFocus())
-            v->handleInput(input);
+            v->handleInput();
     }
 }
 

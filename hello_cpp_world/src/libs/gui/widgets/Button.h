@@ -1,7 +1,6 @@
 #ifndef BUTTON_H
 #define BUTTON_H
-#include "view.h"
-#include "Input.h"
+#include "View.h"
 #include <string>
 
 class Button : public View
@@ -14,8 +13,7 @@ public:
            int width = 0);
     virtual ~Button();
     int draw() override;
-
-    int handleInput(const Input& input);
+    int handleInput();
 
     const std::string getLabel() const{ return label; }
     void setLabel(const std::string& label) { this->label = label; }

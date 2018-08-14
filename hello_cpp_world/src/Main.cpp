@@ -5,7 +5,7 @@
 #include <cstdio>
 #include <map>
 #include "App.h"
-#include "widgets/mainwindow.h"
+#include "widgets/MainWindow.h"
 #include "MyAppCentralWidget.h"
 
 int main(int argc, char *argv[]) {

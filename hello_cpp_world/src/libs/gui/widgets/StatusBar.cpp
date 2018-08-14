@@ -1,4 +1,4 @@
-#include "statusBar.h"
+#include "StatusBar.h"
 #include <psp2/system_param.h>
 #include <psp2/power.h>
 #include <psp2/rtc.h>

@@ -3,7 +3,7 @@
 #pragma once
 
 #include <core/Texture.h>
-#include "view.h"
+#include "View.h"
 #include "core/Font.h"
 #include "constants/Screen.h"
 /**

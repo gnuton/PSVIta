@@ -2,7 +2,7 @@
 #define SPLASH_H
 
 #include <core/Texture.h>
-#include "window.h"
+#include "Window.h"
 
 #pragma once
 

@@ -1,4 +1,4 @@
-#include "splash.h"
+#include "Splash.h"
 
 #include <core/Texture.h>
 #include <algorithm>

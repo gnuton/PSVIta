@@ -1,7 +1,7 @@
 #ifndef LISTVIEW_H
 #define LISTVIEW_H
 
-#include "view.h"
+#include "View.h"
 
 class ListView : public View
 {

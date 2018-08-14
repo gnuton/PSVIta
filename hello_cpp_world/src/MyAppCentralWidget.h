@@ -1,6 +1,6 @@
 #ifndef MYAPPCENTRALWIDGET_H
 #define MYAPPCENTRALWIDGET_H
-#include "widgets/view.h"
+#include "widgets/View.h"
 
 class Button;
 

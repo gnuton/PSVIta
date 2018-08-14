@@ -1,8 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "window.h"
-#include "statusBar.h"
-#include "background.h"
+#include "Window.h"
+#include "StatusBar.h"
+#include "Background.h"
 
 /**
  * @brief The MainWindow class

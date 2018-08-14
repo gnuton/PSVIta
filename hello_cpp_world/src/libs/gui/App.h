@@ -1,9 +1,13 @@
 #ifndef APP_H
 #define APP_H
 
-#include "widgets/Activity.h"
-#include "utils/Logger.h"
 #include <memory>
+
+class Window;
+class Activity;
+class Logger;
+class VitaPad;
+class VitaTouch;
 
 class App {
 
@@ -18,6 +22,8 @@ public:
 private:
     Activity *activity;
     Logger *logger;
+    VitaPad *pad;
+    VitaTouch *touch;
 };
 #endif
 

@@ -13,7 +13,6 @@
  * Windows are handled by Activity class. (Naming is temporary since it will be cleaned ASAP).
  */
 
-class Input;
 
 class View : public Object
 {
@@ -25,7 +24,7 @@ public:
          unsigned int priority = 100);
     virtual ~View();
 
-    virtual int handleInput(const Input& input);
+    virtual int handleInput();
     virtual int draw();
 
     virtual bool isWidget() const { return true; }

@@ -2,19 +2,17 @@
 #define ACTIVITY_H
 
 #include "utils/Singleton.h"
-#include "widgets/window.h"
+#include "widgets/Window.h"
 #include <mutex>
 #include <vector>
 #include <memory>
-
-#pragma once
 
 class Activity: public Singleton<Activity>, public View {
     friend class Singleton<Activity>;
 public:
     ~Activity();
 
-    int handleInput(const Input& input);
+    int handleInput();
     int draw();
 
     void AddWindow(std::shared_ptr<Window> window);

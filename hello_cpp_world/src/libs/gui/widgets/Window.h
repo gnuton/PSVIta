@@ -1,6 +1,6 @@
 #ifndef WINDOW_H
 #define WINDOW_H
-#include "view.h"
+#include "View.h"
 #include "constants/Screen.h"
 
 /**
