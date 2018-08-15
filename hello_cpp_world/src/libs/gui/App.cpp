@@ -22,7 +22,7 @@ App::App():
 
 App::~App(){
     this->logger->Debug( "Destroying App");
-    this->activity->FlushQueue();
+    this->activity->flushQueue();
 
     //TODO Delete should be automatically handled by the object tree. for this to happen App and everything else should be an object
     this->activity->destroyInstance();
@@ -43,7 +43,7 @@ void App::run(){
         pad->Read();
 		    touch->readTouch();
 
-        this->activity->FlushQueue();
+        this->activity->flushQueue();
         this->activity->handleInput();
         this->activity->draw();
 
@@ -54,14 +54,14 @@ void App::run(){
 }
 
 void App::AddWindow(std::shared_ptr<Window> window){
-    this->activity->AddWindow(window);
+    this->activity->addWindow(window);
 }
 
 void App::showSplashScreen(){
     this->logger->Debug( "Showing splash screen");
 
     auto splash = std::make_shared<Splash>(this->activity);
-    this->activity->AddWindow(splash);
+    this->activity->addWindow(splash);
 }
 
 

@@ -15,9 +15,9 @@ public:
     void handleInput();
     void draw();
 
-    void AddWindow(std::shared_ptr<Window> window);
-    void FlushQueue();
-    bool HasActivity();
+    void addWindow(std::shared_ptr<Window> window);
+    void flushQueue();
+    bool hasWindows();
 
 
 private:
