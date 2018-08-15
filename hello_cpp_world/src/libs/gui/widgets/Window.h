@@ -26,6 +26,10 @@ public:
 
     virtual bool isWidget() const { return true; }
     virtual bool isWindow() const { return true; }
+    bool isFullscreen() const { return fullscreen; }
+
+protected:
+    bool fullscreen;
 };
 
 #endif // WINDOW_H

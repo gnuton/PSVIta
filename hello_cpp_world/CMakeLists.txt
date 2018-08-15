@@ -35,7 +35,7 @@ add_definitions(-DVITA_TITLEID="${VITA_TITLEID}")
 ## Flags and includes for building
 # Note that we make sure not to overwrite previous flags
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 # Optional. You can specify more param.sfo flags this way.
 set(VITA_MKSFOEX_FLAGS "${VITA_MKSFOEX_FLAGS} -d PARENTAL_LEVEL=1")
 
@@ -79,7 +79,7 @@ file(GLOB_RECURSE PROJECT_SOURCE_FILES "src/*.h" "src/*.hpp" "src/*.cpp" "src/*.
 add_executable(${SHORT_NAME}
   ${PROJECT_RESOURCES}
   ${PROJECT_SOURCE_FILES}
-)
+        src/libs/gui/utils/ReversedIterable.h)
 
 if(DEBUGNET)
   add_definitions(-g)	

@@ -16,14 +16,13 @@ public:
     void draw();
 
     void addWindow(std::shared_ptr<Window> window);
-    void flushQueue();
     bool hasWindows();
 
 
 private:
     Activity();
     std::mutex mtx;
-    std::vector<std::shared_ptr<Window>> windows_;
-    std::vector<std::shared_ptr<Window>> windows_queue;
+    std::vector<std::shared_ptr<Window>> windows;
+    //std::vector<std::shared_ptr<Window>> windows_queue;
 };
 #endif

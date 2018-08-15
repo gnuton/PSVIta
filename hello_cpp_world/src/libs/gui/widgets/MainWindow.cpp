@@ -7,6 +7,7 @@ MainWindow::MainWindow() :
     centralWidget(new View(this)),
     statusBar(new StatusBar(this))
 {
+    this->fullscreen = true;
 }
 
 MainWindow::~MainWindow() {

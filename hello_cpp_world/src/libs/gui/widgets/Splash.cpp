@@ -14,6 +14,7 @@ Splash::Splash(View* parent) :
     gekihen_splash(Texture(&_binary_assets_spr_gekihen_splash_png_start))
 {
     this->setFocus(false);
+    this->fullscreen = true;
 }
 
 void Splash::draw()

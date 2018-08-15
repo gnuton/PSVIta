@@ -22,7 +22,6 @@ App::App():
 
 App::~App(){
     this->logger->Debug( "Destroying App");
-    this->activity->flushQueue();
 
     //TODO Delete should be automatically handled by the object tree. for this to happen App and everything else should be an object
     this->activity->destroyInstance();
@@ -41,9 +40,8 @@ void App::run(){
         vita2d_clear_screen();
 
         pad->Read();
-		    touch->readTouch();
+        touch->readTouch();
 
-        this->activity->flushQueue();
         this->activity->handleInput();
         this->activity->draw();
 

@@ -2,6 +2,7 @@
 #include <algorithm>
 
 #include "constants/Screen.h"
+#include "utils/ReversedIterable.h"
 
 Activity::Activity() :
     View(NULL, Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Normal)
@@ -16,26 +17,26 @@ void Activity::handleInput()
 {
     std::lock_guard<std::mutex> lock(mtx);
 
-    if (windows_.size() > 1) {
-        for (auto it = begin(windows_), it_last = --end(windows_); it != it_last; ) {
+    if (windows.size() > 1) {
+        for (auto it = begin(windows), it_last = --end(windows); it != it_last; ) {
             (*it)->handleInput();
             if ((*it)->isDestroyable()) {
-                it = windows_.erase(it);
+                it = windows.erase(it);
             } else {
                 ++it;
             }
 
         }
-    } else if (windows_.size() == 0) {
+    } else if (windows.size() == 0) {
         return;
     }
 
-    windows_.back()->handleInput();
+    windows.back()->handleInput();
 
-    windows_.erase(
-                std::remove_if(windows_.begin(), windows_.end(),
+    windows.erase(
+                std::remove_if(windows.begin(), windows.end(),
                                [](const std::shared_ptr<Window> &win) { return win->isDestroyable(); }),
-                windows_.end());
+                windows.end());
 
     return;
 }
@@ -44,31 +45,22 @@ void Activity::handleInput()
 void Activity::draw()
 {
     std::lock_guard<std::mutex> lock(mtx);
-
-    for (auto &window : windows_)
+    for (auto &window : reverse(windows)){
         window->draw();
+        // do not draws stuff which cannot be seen
+        if (window->isFullscreen())
+            break;
+    }
+
 }
 
 
-void Activity::addWindow(std::shared_ptr<Window> window)
-{
+void Activity::addWindow(std::shared_ptr<Window> window) {
     std::lock_guard<std::mutex> lock(mtx);
-    windows_queue.push_back(window);
+    windows.push_back(window);
 }
 
-void Activity::flushQueue()
-{
+bool Activity::hasWindows() {
     std::lock_guard<std::mutex> lock(mtx);
-
-    std::move(windows_queue.begin(), windows_queue.end(), std::back_inserter(windows_));
-    windows_queue.erase(windows_queue.begin(),windows_queue.end());
-
-    std::sort(windows_.begin(), windows_.end(),
-              [] (std::shared_ptr<Window> const& win1, std::shared_ptr<Window> const& win2) { return win1->getPriority() < win2->getPriority(); });
-}
-
-bool Activity::hasWindows()
-{
-    std::lock_guard<std::mutex> lock(mtx);
-    return !windows_.empty();
+    return !windows.empty();
 }
