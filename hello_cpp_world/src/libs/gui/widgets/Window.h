@@ -12,6 +12,8 @@
  *
  * Widgets in the window can register for key press events.
  * Key press events are sent by the Vita pad.
+ *
+ * If fullscreen flag is set, windows below will not be drawn
  */
 
 class Window : public View

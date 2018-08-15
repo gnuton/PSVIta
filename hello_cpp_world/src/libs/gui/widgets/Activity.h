@@ -4,7 +4,7 @@
 #include "utils/Singleton.h"
 #include "widgets/Window.h"
 #include <mutex>
-#include <vector>
+#include <list>
 #include <memory>
 
 class Activity: public Singleton<Activity>, public View {
@@ -22,7 +22,7 @@ public:
 private:
     Activity();
     std::mutex mtx;
-    std::vector<std::shared_ptr<Window>> windows;
+    std::list<std::shared_ptr<Window>> windows;
     //std::vector<std::shared_ptr<Window>> windows_queue;
 };
 #endif
