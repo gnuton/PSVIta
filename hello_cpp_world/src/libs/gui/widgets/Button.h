@@ -20,7 +20,7 @@
 class Button : public View
 {
 public:
-    Button(View* parent,
+    explicit Button(View* parent,
            const std::string& text = "",
            const Point& topLeft = Point(0,0),
            int height=0,

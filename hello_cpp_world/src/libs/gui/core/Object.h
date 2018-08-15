@@ -14,7 +14,7 @@
 class Object
 {
 public:
-    Object(Object *parent);
+    explicit Object(Object *parent);
     virtual ~Object();
 
     virtual const Object* getParent() const final;

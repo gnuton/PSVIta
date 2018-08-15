@@ -6,7 +6,7 @@
 class Background : public View
 {
 public:
-    Background(View *parent);
+    explicit Background(View *parent);
 
     void draw() override;
 private:

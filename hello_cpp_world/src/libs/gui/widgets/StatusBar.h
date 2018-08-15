@@ -15,7 +15,7 @@
  */
 class StatusBar: public View {
 public:
-    StatusBar(View* parent = NULL);
+    explicit StatusBar(View* parent = NULL);
     void draw() override;
 
 private:

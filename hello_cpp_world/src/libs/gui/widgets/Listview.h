@@ -6,7 +6,7 @@
 class ListView : public View
 {
 public:
-    ListView(View* parent);
+    explicit ListView(View* parent);
     void draw() override;
 };
 
