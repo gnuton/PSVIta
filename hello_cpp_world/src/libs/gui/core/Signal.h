@@ -1,4 +1,5 @@
-// Taken from http://simmesimme.github.io/tutorials/2015/09/20/signal-slot
+// This code has been written by Simon Schneegans
+// http://simmesimme.github.io/tutorials/2015/09/20/signal-slot
 #ifndef SIGNAL_H
 #define SIGNAL_H
 

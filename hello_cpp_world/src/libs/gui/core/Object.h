@@ -1,6 +1,7 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 #include <set>
+#include "Signal.h"
 
 /**
  * @brief The Object class
@@ -25,6 +26,8 @@ public:
 
     virtual bool removeChild(Object* child) final;
     virtual bool addChild(Object* child) final;
+
+    Signal<const Object*> destroyed;
 
 protected:
     std::set<Object *> children;

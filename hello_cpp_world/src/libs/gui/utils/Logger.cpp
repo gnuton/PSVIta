@@ -2,8 +2,7 @@
 
 #include <debugnet.h>
 #include <algorithm>
-
-using namespace std;
+#include <string>
 
 Logger::Logger(){
 #ifdef DEBUGNET
@@ -17,9 +16,15 @@ Logger::~Logger(){
 
 void Logger::Log(LoggerFormat f, const std::string& msg){
 #ifdef DEBUGNET
-    string formattedMsg = FormatToStr[f] + msg + '\n';
-    formattedMsg.resize(min(512, 512));
+    std::lock_guard<std::mutex> lock(mtx);
+    std::string formattedMsg = FormatToStr[f] + msg + '\n';
+    formattedMsg.resize(std::min(this->maxBufferSize, static_cast<int>(formattedMsg.length())))
+
     debugNetUDPSend(formattedMsg.c_str());
+
+    logsBuffer.push_back(formattedMsg.c_str());
+    if (logsBuffer.size() >= logsBufferSizeInLines)
+        logsBuffer.pop_front();
 #endif
 }
 
@@ -33,5 +38,14 @@ void Logger::TerminateLogger() {
       Logger::getInstance()->Log(LoggerFormat::error, std::string("terminate() because of %s", e.what()));
     }
 #endif
+}
+
+std::string Logger::readLogs() {
+    std::lock_guard<std::mutex> lock(mtx);
+    std::ostringstream s;
+    for (auto line : logsBuffer) {
+        s << line << '\n';
+    }
+    return s.str();
 }
 

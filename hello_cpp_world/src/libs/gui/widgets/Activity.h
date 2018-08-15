@@ -6,6 +6,7 @@
 #include <mutex>
 #include <list>
 #include <memory>
+#include <core/Font.h>
 
 class Activity: public Singleton<Activity>, public View {
     friend class Singleton<Activity>;
@@ -17,12 +18,12 @@ public:
 
     void addWindow(std::shared_ptr<Window> window);
     bool hasWindows();
-
-
 private:
     Activity();
+    void onWindowDestroyed(const Object* window);
+
     std::mutex mtx;
     std::list<std::shared_ptr<Window>> windows;
-    //std::vector<std::shared_ptr<Window>> windows_queue;
+    Font debugFont;
 };
 #endif

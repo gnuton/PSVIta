@@ -9,6 +9,7 @@ Object::~Object() {
         delete child;
     }
     children.clear();
+    this->destroyed.emit(this);
 }
 
 const Object* Object::getParent() const {
