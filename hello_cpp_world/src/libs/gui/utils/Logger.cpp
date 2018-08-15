@@ -18,7 +18,7 @@ void Logger::Log(LoggerFormat f, const std::string& msg){
 #ifdef DEBUGNET
     std::lock_guard<std::mutex> lock(mtx);
     std::string formattedMsg = FormatToStr[f] + msg + '\n';
-    formattedMsg.resize(std::min(this->maxBufferSize, static_cast<int>(formattedMsg.length())))
+    formattedMsg.resize(std::min(this->maxBufferSize, static_cast<int>(formattedMsg.length())));
 
     debugNetUDPSend(formattedMsg.c_str());
 

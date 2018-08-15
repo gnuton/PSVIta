@@ -17,7 +17,7 @@ enum LoggerFormat { debug, info, warning, error };
  * Logger
  * Logger class must be singleton in the application.
  * It works ONLY if the app is built in debug mode (DEBUGNET flag on).
- * 
+ *
  * The logged messages are
  * - sent over network through UDP to the host defined into the debugnetip.txt
  * - shown in the screen

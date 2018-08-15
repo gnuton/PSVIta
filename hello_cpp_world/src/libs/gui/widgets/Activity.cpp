@@ -58,7 +58,6 @@ void Activity::draw() {
 #ifdef DEBUGNET
     debugFont.Draw(Point(50, 50), Logger::getInstance()->readLogs(), Color::BlueGray);
 #endif
-    Logger::getInstance()->Debug("REMOVE ME");
 }
 
 
