@@ -10,6 +10,12 @@
  * Object have parent and children. They live in a tree.
  * The tree should help developers to prevent memory leaks since
  * deleting the parents will delete the children.
+ *
+ * To destroy an object call Object::destroy() which will emit requestDestroy to the parent.
+ * The parent will run onRequestChildDestroy which will:
+ * - emit destroying signal
+ * - remove the child from the list of children
+ * The destructor will be automatically invoked when the shared_ptr count reaches zero.
  */
 
 class Object
@@ -27,7 +33,14 @@ public:
     virtual bool removeChild(Object* child) final;
     virtual bool addChild(Object* child) final;
 
-    Signal<const Object*> destroyed;
+    virtual void destroy() final;
+
+    Signal<Object*> requestDestroy;
+    Signal<Object*> destroying;
+
+    virtual void onRequestChildDestroy(Object* child);
+
+    void disconnectAll();
 
 protected:
     std::set<Object *> children;

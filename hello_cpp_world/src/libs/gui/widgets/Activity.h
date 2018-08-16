@@ -20,7 +20,7 @@ public:
     bool hasWindows();
 private:
     Activity();
-    void onWindowDestroyed(const Object* window);
+    void onWindowDestroyed(Object* window);
 
     std::mutex mtx;
     std::list<std::shared_ptr<Window>> windows;

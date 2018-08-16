@@ -60,7 +60,7 @@ public:
 protected:
     enum PriorityLevel { Min = 0, Normal = 100, Max= 256 };
 
-    // FIXME Not a good way to signal it needs to be destroyed
+    // FIXME Not a good way to signal it needs to be destroying
     bool request_destroy = false;
     unsigned int priority;
     Point pos;

@@ -11,6 +11,19 @@
  *  which will be called when the emit() method on the
  * signal object is invoked. Any argument passed to emit()
  * will be passed to the given functions.
+ *
+ * Usage:
+ * # Define signal
+ * TODO
+ *
+ * # Define slot
+ * TODO
+ *
+ * # Connect signal and slots together
+ * TODO
+ *
+ * # Emit signal
+ * TODO
  */
 template <typename... Args>
 class Signal {

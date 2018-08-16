@@ -16,34 +16,12 @@ Activity::~Activity() {
 
 void Activity::handleInput() {
     std::lock_guard<std::mutex> lock(mtx);
+
     for (auto &window : reverse(windows)) {
         window->handleInput();
         if (window->isFullscreen())
             break;
     }
-    /*
-    if (windows.size() > 1) {
-        for (auto it = begin(windows), it_last = --end(windows); it != it_last;) {
-            (*it)->handleInput();
-            if ((*it)->isDestroyable()) {
-                it = windows.erase(it);
-            } else {
-                ++it;
-            }
-
-        }
-    } else if (windows.size() == 0) {
-        return;
-    }
-
-    windows.back()->handleInput();
-
-    windows.erase(
-            std::remove_if(windows.begin(), windows.end(),
-                           [](const std::shared_ptr<Window> &win) { return win->isDestroyable(); }),
-            windows.end());
-
-    return;*/
 }
 
 
@@ -64,7 +42,8 @@ void Activity::draw() {
 void Activity::addWindow(std::shared_ptr<Window> window) {
     std::lock_guard<std::mutex> lock(mtx);
     windows.push_back(window);
-    window.get()->destroyed.connectMember(this, &Activity::onWindowDestroyed);
+    Logger::getInstance()->Debug(FORMAT("window added " << window.get()));
+    window.get()->destroying.connectMember(this, &Activity::onWindowDestroyed);
 }
 
 bool Activity::hasWindows() {
@@ -72,12 +51,15 @@ bool Activity::hasWindows() {
     return !windows.empty();
 }
 
-void Activity::onWindowDestroyed(const Object* windowObj) {
-    Logger::getInstance()->Debug("onWindowDestroyed");
-    for (auto iter = std::end(windows); iter != std::begin(windows); --iter) {
+void Activity::onWindowDestroyed(Object* windowObj) {
+    Logger::getInstance()->Debug(FORMAT("onWindowDestroyed windows:" << windows.size()));
+    for (auto iter = std::end(windows); iter != std::begin(windows); iter--) {
         if (iter->get() == windowObj) {
+            Logger::getInstance()->Debug("Found and removed");
             windows.erase(iter);
             break;
+        } else {
+            Logger::getInstance()->Debug(FORMAT("Window:" << iter->get() << " != " << windowObj));
         }
     }
 }
