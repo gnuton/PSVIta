@@ -25,6 +25,7 @@ void Splash::draw()
     };
 
     if (splash_index >= 2) {
+        this->requestDestroy.emit(this);
         request_destroy = true;
         return;
     }
@@ -33,7 +34,7 @@ void Splash::draw()
 
     switch(step) {
     case STEP_FADING_IN:
-        alpha = std::min<unsigned int>(255, alpha+4);
+        alpha = std::min<unsigned int>(255, alpha+32);
         if (alpha >= 255) {
             step = STEP_STATIC;
             alpha = 255;
@@ -41,13 +42,13 @@ void Splash::draw()
         }
         break;
     case STEP_STATIC:
-        if (frame_count >= 5*60) {
+        if (frame_count >= 5*10) {
             step = STEP_FADING_OUT;
         }
         frame_count += 1;
         break;
     case STEP_FADING_OUT:
-        alpha = std::max<int>(0, ((int)alpha)-4);
+        alpha = std::max<int>(0, ((int)alpha)-32);
         if (alpha <= 0) {
             alpha = 0;
             splash_index += 1;
