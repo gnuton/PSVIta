@@ -19,11 +19,7 @@
 class View : public Object
 {
 public:
-    View(View *parent,
-         const Point& pos= Point(0,0),
-         int height = 0,
-         int width = 0,
-         unsigned int priority = 100);
+    View(View *parent, const Point &pos = Point(0, 0), int height = 0, int width = 0);
     virtual ~View();
 
     virtual void handleInput();
@@ -31,9 +27,6 @@ public:
 
     virtual bool isWidget() const { return true; }
     virtual bool isWindow() const { return false; }
-
-    inline unsigned int getPriority() const { return priority; }
-    inline bool isDestroyable() const { return request_destroy; }
 
     const Point getPos() const{ return pos; }
     void setPos(const Point& topLeftPoint) { pos = topLeftPoint; }
@@ -58,11 +51,6 @@ public:
     void setFocus(const bool focus) { this->focus = focus; }
 
 protected:
-    enum PriorityLevel { Min = 0, Normal = 100, Max= 256 };
-
-    // FIXME Not a good way to signal it needs to be destroying
-    bool request_destroy = false;
-    unsigned int priority;
     Point pos;
     int height;
     int width;

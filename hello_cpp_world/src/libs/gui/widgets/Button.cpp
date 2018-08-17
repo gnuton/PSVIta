@@ -9,11 +9,10 @@ Button::Button(View* parent,
                const Point& topLeft,
                int height,
                int width):
-    View(parent,
-         topLeft,
-         height,
-         width,
-         parent ? parent->getPriority() : PriorityLevel::Normal),
+        View(parent,
+             topLeft,
+             height,
+             width),
     label(label)
 {
 

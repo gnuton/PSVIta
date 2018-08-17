@@ -3,7 +3,7 @@
 #include "utils/Logger.h"
 
 MyAppCentralWidget::MyAppCentralWidget(View* parent):
-    View(parent),
+        View(parent),
     button(new Button(static_cast<View*>(this)))
 {
     button->setHeight(30);

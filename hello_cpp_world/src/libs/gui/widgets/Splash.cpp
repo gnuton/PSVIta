@@ -9,7 +9,7 @@ extern unsigned char _binary_assets_spr_gekihen_splash_png_start;
 
 
 Splash::Splash(View* parent) :
-    Window(parent, Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Max),
+        Window(parent, Point(0, 0), SCREEN_HEIGHT, SCREEN_WIDTH),
     vhbb_splash(Texture(&_binary_assets_spr_img_splash_png_start)),
     gekihen_splash(Texture(&_binary_assets_spr_gekihen_splash_png_start))
 {
@@ -24,11 +24,8 @@ void Splash::draw()
         gekihen_splash
     };
 
-    if (splash_index >= 2) {
-        this->requestDestroy.emit(this);
-        request_destroy = true;
-        return;
-    }
+    if (splash_index >= 2)
+        return this->destroy();
 
     splashes[splash_index].DrawExt(Point(0, 0), alpha);
 

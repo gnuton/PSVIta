@@ -6,7 +6,7 @@
 #include "utils/Logger.h"
 
 Activity::Activity() :
-        View(NULL, Point(0, 0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Normal),
+        View(NULL, Point(0, 0), SCREEN_HEIGHT, SCREEN_WIDTH),
         debugFont(Font(std::string(Font::FontDir() + "segoeui.ttf"), 11)) {
 }
 

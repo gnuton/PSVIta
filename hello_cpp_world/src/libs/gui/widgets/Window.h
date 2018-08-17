@@ -19,11 +19,7 @@
 class Window : public View
 {
 public:
-    Window(View *parent,
-           const Point& pos= Point(0,0),
-           int height = SCREEN_HEIGHT,
-           int width = SCREEN_WIDTH,
-           unsigned int priority = PriorityLevel::Normal);
+    Window(View *parent, const Point &pos = Point(0, 0), int height = SCREEN_HEIGHT, int width = SCREEN_WIDTH);
     virtual ~Window();
 
     virtual bool isWidget() const { return true; }

@@ -3,7 +3,7 @@
 #include "constants/Screen.h"
 
 ListView::ListView(View* parent):
-    View(parent, Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Normal) {
+        View(parent, Point(0, 0), SCREEN_HEIGHT, SCREEN_WIDTH) {
 
 }
 
