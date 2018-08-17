@@ -18,6 +18,8 @@
 
 class Widget : public Object
 {
+    NO_COPY_AND_ASSIGN(Widget)
+    
 public:
     Widget(Widget *parent, const Point &pos = Point(0, 0), int height = 0, int width = 0);
     virtual ~Widget();

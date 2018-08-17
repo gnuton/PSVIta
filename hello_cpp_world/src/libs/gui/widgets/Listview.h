@@ -5,6 +5,8 @@
 
 class ListView : public Widget
 {
+    NO_COPY_AND_ASSIGN(ListView)
+
 public:
     explicit ListView(Widget* parent);
     void draw() override;

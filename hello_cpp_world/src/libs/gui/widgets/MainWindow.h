@@ -14,6 +14,8 @@
  */
 class MainWindow : public Window
 {
+    NO_COPY_AND_ASSIGN(MainWindow)
+
 public:
     MainWindow();
     virtual ~MainWindow();

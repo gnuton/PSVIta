@@ -21,6 +21,8 @@ typedef enum {
  */
 class Splash : public Window
 {
+    NO_COPY_AND_ASSIGN(Splash)
+
 public:
     explicit Splash(Widget* parent = NULL);
 

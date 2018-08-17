@@ -5,6 +5,8 @@
 
 class Background : public Widget
 {
+	NO_COPY_AND_ASSIGN(Background)
+
 public:
     explicit Background(Widget *parent);
 

@@ -18,10 +18,14 @@
  * The destructor will be automatically invoked when the shared_ptr count reaches zero.
  */
 
-class Object
+#include "utils/macros.h"
+
+ class Object
 {
+     NO_COPY_AND_ASSIGN(Object);
 public:
     explicit Object(Object *parent);
+
     virtual ~Object();
 
     virtual const Object* getParent() const final;

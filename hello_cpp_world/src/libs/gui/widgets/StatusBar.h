@@ -14,6 +14,8 @@
  * It never gets the focus, so it cannot handle input.
  */
 class StatusBar: public Widget {
+    NO_COPY_AND_ASSIGN(StatusBar)
+
 public:
     explicit StatusBar(Widget* parent = NULL);
     void draw() override;

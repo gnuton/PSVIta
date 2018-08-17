@@ -19,6 +19,8 @@
  */
 class Button : public Widget
 {
+    NO_COPY_AND_ASSIGN(Button)
+
 public:
     explicit Button(Widget* parent,
            const std::string& text = "",

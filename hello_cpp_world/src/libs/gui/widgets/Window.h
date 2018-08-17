@@ -18,6 +18,8 @@
 
 class Window : public Widget
 {
+    NO_COPY_AND_ASSIGN(Window)
+
 public:
     Window(Widget *parent, const Point &pos = Point(0, 0), int height = SCREEN_HEIGHT, int width = SCREEN_WIDTH);
     virtual ~Window();
