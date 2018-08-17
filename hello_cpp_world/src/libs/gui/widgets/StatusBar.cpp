@@ -17,8 +17,8 @@ void getTimeString(char *string, int time_format, SceDateTime *time);
 int displayBattery();
 int displayDate();
 
-StatusBar::StatusBar(View* parent) :
-        View(parent, Point(0, 0), 30, SCREEN_WIDTH), // max -1 just below the splash screen
+StatusBar::StatusBar(Widget* parent) :
+        Widget(parent, Point(0, 0), 30, SCREEN_WIDTH), // max -1 just below the splash screen
     font_22(Font(std::string(Font::FontDir() + "segoeui.ttf"), 22)),
     img_statsbar_battery(Texture(&_binary_assets_spr_img_statsbar_battery_png_start)),
     img_statsbar_battery_charge(Texture(&_binary_assets_spr_img_statsbar_battery_charge_png_start))

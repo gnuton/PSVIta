@@ -16,11 +16,11 @@
  class VitaTouch;
  class VitaPad;
 
-class View : public Object
+class Widget : public Object
 {
 public:
-    View(View *parent, const Point &pos = Point(0, 0), int height = 0, int width = 0);
-    virtual ~View();
+    Widget(Widget *parent, const Point &pos = Point(0, 0), int height = 0, int width = 0);
+    virtual ~Widget();
 
     virtual void handleInput();
     virtual void draw();

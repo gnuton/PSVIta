@@ -1,6 +1,6 @@
 #ifndef WINDOW_H
 #define WINDOW_H
-#include "View.h"
+#include "Widget.h"
 #include "constants/Screen.h"
 
 /**
@@ -16,10 +16,10 @@
  * If fullscreen flag is set, windows below will not be drawn
  */
 
-class Window : public View
+class Window : public Widget
 {
 public:
-    Window(View *parent, const Point &pos = Point(0, 0), int height = SCREEN_HEIGHT, int width = SCREEN_WIDTH);
+    Window(Widget *parent, const Point &pos = Point(0, 0), int height = SCREEN_HEIGHT, int width = SCREEN_WIDTH);
     virtual ~Window();
 
     virtual bool isWidget() const { return true; }

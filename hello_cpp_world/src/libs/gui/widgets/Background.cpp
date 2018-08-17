@@ -3,8 +3,8 @@
 
 extern unsigned char _binary_assets_spr_img_bg_png_start;
 
-Background::Background(View* parent) :
-        View(parent,
+Background::Background(Widget* parent) :
+        Widget(parent,
              Point(0, 0),
              SCREEN_HEIGHT,
              SCREEN_WIDTH),

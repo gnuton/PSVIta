@@ -3,7 +3,7 @@
 #pragma once
 
 #include <core/Texture.h>
-#include "View.h"
+#include "Widget.h"
 #include "core/Font.h"
 #include "constants/Screen.h"
 /**
@@ -13,9 +13,9 @@
  * battery status and current time.
  * It never gets the focus, so it cannot handle input.
  */
-class StatusBar: public View {
+class StatusBar: public Widget {
 public:
-    explicit StatusBar(View* parent = NULL);
+    explicit StatusBar(Widget* parent = NULL);
     void draw() override;
 
 private:

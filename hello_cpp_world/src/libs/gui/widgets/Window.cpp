@@ -1,7 +1,7 @@
 #include "Window.h"
 
-Window::Window(View *parent, const Point &pos, int height, int width) :
-        View(parent,
+Window::Window(Widget *parent, const Point &pos, int height, int width) :
+        Widget(parent,
              pos,
              height,
              width)

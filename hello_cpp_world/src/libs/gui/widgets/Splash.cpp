@@ -8,7 +8,7 @@ extern unsigned char _binary_assets_spr_img_splash_png_start;
 extern unsigned char _binary_assets_spr_gekihen_splash_png_start;
 
 
-Splash::Splash(View* parent) :
+Splash::Splash(Widget* parent) :
         Window(parent, Point(0, 0), SCREEN_HEIGHT, SCREEN_WIDTH),
     vhbb_splash(Texture(&_binary_assets_spr_img_splash_png_start)),
     gekihen_splash(Texture(&_binary_assets_spr_gekihen_splash_png_start))

@@ -1,12 +1,12 @@
 #ifndef LISTVIEW_H
 #define LISTVIEW_H
 
-#include "View.h"
+#include "Widget.h"
 
-class ListView : public View
+class ListView : public Widget
 {
 public:
-    explicit ListView(View* parent);
+    explicit ListView(Widget* parent);
     void draw() override;
 };
 

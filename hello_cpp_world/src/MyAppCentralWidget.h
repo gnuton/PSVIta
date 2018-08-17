@@ -1,13 +1,13 @@
 #ifndef MYAPPCENTRALWIDGET_H
 #define MYAPPCENTRALWIDGET_H
-#include "widgets/View.h"
+#include "widgets/Widget.h"
 
 class Button;
 
-class MyAppCentralWidget : public View
+class MyAppCentralWidget : public Widget
 {
 public:
-    MyAppCentralWidget(View* parent);
+    MyAppCentralWidget(Widget* parent);
     void draw() override;
 
     void onButtonClicked();

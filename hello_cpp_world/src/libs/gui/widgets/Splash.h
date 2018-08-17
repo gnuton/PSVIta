@@ -22,7 +22,7 @@ typedef enum {
 class Splash : public Window
 {
 public:
-    explicit Splash(View* parent = NULL);
+    explicit Splash(Widget* parent = NULL);
 
     void draw() override;
 private:

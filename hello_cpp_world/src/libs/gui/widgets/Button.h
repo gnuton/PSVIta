@@ -1,6 +1,6 @@
 #ifndef BUTTON_H
 #define BUTTON_H
-#include "View.h"
+#include "Widget.h"
 #include <string>
 #include <core/Signal.h>
 
@@ -17,10 +17,10 @@
  *   - onClicked()
  *
  */
-class Button : public View
+class Button : public Widget
 {
 public:
-    explicit Button(View* parent,
+    explicit Button(Widget* parent,
            const std::string& text = "",
            const Point& topLeft = Point(0,0),
            int height=0,

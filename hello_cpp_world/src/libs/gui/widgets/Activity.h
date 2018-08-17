@@ -8,7 +8,7 @@
 #include <memory>
 #include <core/Font.h>
 
-class Activity: public Singleton<Activity>, public View {
+class Activity: public Singleton<Activity>, public Widget {
     friend class Singleton<Activity>;
 public:
     ~Activity();

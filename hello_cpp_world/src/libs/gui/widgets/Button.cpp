@@ -4,12 +4,12 @@
 #include "utils/Logger.h"
 #include <input/VitaTouch.h>
 
-Button::Button(View* parent,
+Button::Button(Widget* parent,
                const std::string& text,
                const Point& topLeft,
                int height,
                int width):
-        View(parent,
+        Widget(parent,
              topLeft,
              height,
              width),

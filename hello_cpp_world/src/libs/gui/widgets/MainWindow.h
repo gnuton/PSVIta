@@ -21,14 +21,14 @@ public:
     virtual bool isWidget() const { return true; }
     virtual bool isWindow() const { return true; }
 
-    const View* getCentralWidget() const { return centralWidget; }
-    void setCentralWidget(View* centralWidget) {
+    const Widget* getCentralWidget() const { return centralWidget; }
+    void setCentralWidget(Widget* centralWidget) {
         this->centralWidget = centralWidget;
         centralWidget->setParent(this);
     }
 private:
     StatusBar *statusBar;
-    View *centralWidget;
+    Widget *centralWidget;
     Background *background;
 };
 

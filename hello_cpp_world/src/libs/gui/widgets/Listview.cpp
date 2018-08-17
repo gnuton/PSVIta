@@ -2,8 +2,8 @@
 #include <vita2d.h>
 #include "constants/Screen.h"
 
-ListView::ListView(View* parent):
-        View(parent, Point(0, 0), SCREEN_HEIGHT, SCREEN_WIDTH) {
+ListView::ListView(Widget* parent):
+        Widget(parent, Point(0, 0), SCREEN_HEIGHT, SCREEN_WIDTH) {
 
 }
 

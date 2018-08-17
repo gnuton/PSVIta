@@ -1,12 +1,12 @@
 #ifndef BACKGROUND_H
 #define BACKGROUND_H
 #include <core/Texture.h>
-#include "View.h"
+#include "Widget.h"
 
-class Background : public View
+class Background : public Widget
 {
 public:
-    explicit Background(View *parent);
+    explicit Background(Widget *parent);
 
     void draw() override;
 private:

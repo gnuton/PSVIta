@@ -2,9 +2,9 @@
 #include "widgets/Button.h"
 #include "utils/Logger.h"
 
-MyAppCentralWidget::MyAppCentralWidget(View* parent):
-        View(parent),
-    button(new Button(static_cast<View*>(this)))
+MyAppCentralWidget::MyAppCentralWidget(Widget* parent):
+        Widget(parent),
+    button(new Button(static_cast<Widget*>(this)))
 {
     button->setHeight(30);
     button->setWidth(80);
