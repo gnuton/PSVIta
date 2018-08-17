@@ -6,7 +6,7 @@
 class Background : public View
 {
 public:
-    explicit Background(View *parent);
+    explicit Background(std::shared_ptr<Object> parent);
 
     void draw() override;
 private:

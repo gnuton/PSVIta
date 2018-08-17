@@ -1,40 +1,36 @@
 #include <utils/Logger.h>
 #include "Object.h"
 
-Object::Object(Object *parent){
+Object::Object(std::shared_ptr<Object> parent){
     setParent(parent);
 }
 
 Object::~Object() {
     disconnectAll();
-
-    for (auto child : children) {
-        delete child;
-    }
     children.clear();
 }
 
-const Object* Object::getParent() const {
+const std::shared_ptr<Object> Object::getParent() const {
     return this->parent;
 }
 
-void Object::setParent(Object* parent) {
+void Object::setParent(std::shared_ptr<Object> parent) {
     if (this->parent)
-        parent->removeChild(this);
+        parent->removeChild(shared_from_this());
 
     this->parent = parent;
     if (this->parent)
-        this->parent->addChild(this);
+        this->parent->addChild(shared_from_this());
 }
 
-bool Object::removeChild(Object* child) {
+bool Object::removeChild(std::shared_ptr<Object> child) {
     if (!child)
         return false;
 
     return this->children.erase(child);
 }
 
-bool Object::addChild(Object* child) {
+bool Object::addChild(std::shared_ptr<Object> child) {
     if (!child)
         return false;
     this->children.insert(child);
@@ -43,10 +39,10 @@ bool Object::addChild(Object* child) {
 }
 
 void Object::destroy() {
-    requestDestroy.emit(this);
+    requestDestroy.emit(shared_from_this());
 }
 
-void Object::onRequestChildDestroy(Object* child) {
+void Object::onRequestChildDestroy(std::shared_ptr<Object> child) {
     if (children.find(child) == children.end())
         return;
     child->destroying.emit(child);

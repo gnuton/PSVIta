@@ -51,10 +51,10 @@ bool Activity::hasWindows() {
     return !windows.empty();
 }
 
-void Activity::onWindowDestroyed(Object* windowObj) {
+void Activity::onWindowDestroyed(std::shared_ptr<Object> windowObj) {
     Logger::getInstance()->Debug(FORMAT("onWindowDestroyed windows:" << windows.size()));
     for (auto iter = std::end(windows); iter != std::begin(windows); iter--) {
-        if (iter->get() == windowObj) {
+        if (*iter == windowObj) {
             Logger::getInstance()->Debug("Found and removed");
             windows.erase(iter);
             break;

@@ -3,12 +3,12 @@
 
 extern unsigned char _binary_assets_spr_img_bg_png_start;
 
-Background::Background(View* parent) :
+Background::Background(std::shared_ptr<Object> parent) :
     View(parent,
          Point(0,0),
          SCREEN_HEIGHT,
          SCREEN_WIDTH,
-         parent ? parent->getPriority() : PriorityLevel::Min),
+         PriorityLevel::Min),
     img_bg(Texture(&_binary_assets_spr_img_bg_png_start))
 {
 }

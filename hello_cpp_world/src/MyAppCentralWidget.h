@@ -7,7 +7,7 @@ class Button;
 class MyAppCentralWidget : public View
 {
 public:
-    MyAppCentralWidget(View* parent);
+    MyAppCentralWidget(std::shared_ptr<View> parent);
     void draw() override;
 
     void onButtonClicked();

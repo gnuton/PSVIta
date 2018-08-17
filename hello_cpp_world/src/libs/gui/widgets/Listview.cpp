@@ -2,7 +2,7 @@
 #include <vita2d.h>
 #include "constants/Screen.h"
 
-ListView::ListView(View* parent):
+ListView::ListView(std::shared_ptr<Object>  parent):
     View(parent, Point(0,0), SCREEN_HEIGHT, SCREEN_WIDTH, PriorityLevel::Normal) {
 
 }

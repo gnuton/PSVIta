@@ -2,23 +2,22 @@
 #include "input/VitaPad.h"
 #include "input/VitaTouch.h"
 
-View::View(View* parent, const Point& pos, int height, int width, unsigned int priority):
+View::View(std::shared_ptr<Object> parent, const Point& pos, int height, int width, unsigned int priority):
     Object(parent),
     pos(pos),
     height(height),
     width(width),
-    priority(priority),
-    pad(VitaPad::getInstance()),
-    touch(VitaTouch::getInstance())
+    priority(priority)
 {
-
+    pad = VitaPad::getInstance();
+    touch = VitaTouch::getInstance();
 }
 
 View::~View() {}
 
 void View::handleInput() {
     for (auto child : children) {
-        View* v = static_cast<View*>(child);
+        View* v = static_cast<View*>(child.get()); //FIXME use smart pointers
         if (v && v->hasFocus())
             v->handleInput();
     }
@@ -26,7 +25,7 @@ void View::handleInput() {
 
 void View::draw() {
     for (auto child : children) {
-        View* v = static_cast<View*>(child);
+        View* v = static_cast<View*>(child.get());//FIXME use smart pointers
         if (v && v->isVisible())
             v->draw();
     }

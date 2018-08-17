@@ -18,12 +18,6 @@ public:
     void run();
     void AddWindow(std::shared_ptr<Window> window);
     void showSplashScreen();
-
-private:
-    Activity *activity;
-    Logger *logger;
-    VitaPad *pad;
-    VitaTouch *touch;
 };
 #endif
 

@@ -4,7 +4,7 @@
 #include "utils/Logger.h"
 #include <input/VitaTouch.h>
 
-Button::Button(View* parent,
+Button::Button(std::shared_ptr<Object> parent,
                const std::string& text,
                const Point& topLeft,
                int height,
@@ -13,7 +13,7 @@ Button::Button(View* parent,
          topLeft,
          height,
          width,
-         parent ? parent->getPriority() : PriorityLevel::Normal),
+         parent ? PriorityLevel::Normal)
     label(label)
 {
 

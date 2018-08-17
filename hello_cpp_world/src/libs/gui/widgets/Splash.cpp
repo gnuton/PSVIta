@@ -25,7 +25,7 @@ void Splash::draw()
     };
 
     if (splash_index >= 2) {
-        this->requestDestroy.emit(this);
+        this->requestDestroy.emit(shared_from_this());
         request_destroy = true;
         return;
     }

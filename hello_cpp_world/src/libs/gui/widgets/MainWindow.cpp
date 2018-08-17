@@ -12,5 +12,3 @@ MainWindow::MainWindow() :
 
 MainWindow::~MainWindow() {
 }
-
-

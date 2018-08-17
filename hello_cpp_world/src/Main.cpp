@@ -11,8 +11,8 @@ int main(int argc, char *argv[]) {
   auto app = App();
 
   auto mainWindow = std::make_shared<MainWindow>();
-  auto centralWidget = std::make_shared<MyAppCentralWidget>(mainWindow.get());
-  mainWindow->setCentralWidget(centralWidget.get());
+  auto centralWidget = std::make_shared<MyAppCentralWidget>(mainWindow);
+  mainWindow->setCentralWidget(centralWidget);
   app.AddWindow(mainWindow);
 
   app.showSplashScreen();

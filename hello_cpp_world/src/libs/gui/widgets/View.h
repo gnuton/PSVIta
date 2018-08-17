@@ -19,7 +19,7 @@
 class View : public Object
 {
 public:
-    View(View *parent,
+    View(std::shared_ptr<Object> parent,
          const Point& pos= Point(0,0),
          int height = 0,
          int width = 0,
@@ -68,7 +68,7 @@ protected:
     int width;
     bool visible = true;
     bool focus = true;
-    VitaTouch *touch;
-    VitaPad *pad;
+    std::shared_ptr<VitaPad> pad;
+    std::shared_ptr<VitaTouch> touch;
 };
 #endif

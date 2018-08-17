@@ -18,35 +18,37 @@
  * The destructor will be automatically invoked when the shared_ptr count reaches zero.
  */
 
-class Object
+#include <memory>
+
+class Object : public std::enable_shared_from_this<Object>
 {
 public:
-    explicit Object(Object *parent);
+    explicit Object(std::shared_ptr<Object> parent);
     virtual ~Object();
 
-    virtual const Object* getParent() const final;
-    virtual void setParent(Object* parent) final;
+    virtual const std::shared_ptr<Object> getParent() const final;
+    virtual void setParent(std::shared_ptr<Object> parent) final;
 
     virtual bool isWidget() const = 0;
     virtual bool isWindow() const = 0;
 
-    virtual bool removeChild(Object* child) final;
-    virtual bool addChild(Object* child) final;
+    virtual bool removeChild(std::shared_ptr<Object> child) final;
+    virtual bool addChild(std::shared_ptr<Object> child) final;
 
     virtual void destroy() final;
 
-    Signal<Object*> requestDestroy;
-    Signal<Object*> destroying;
+    Signal<std::shared_ptr<Object>> requestDestroy;
+    Signal<std::shared_ptr<Object>> destroying;
 
-    virtual void onRequestChildDestroy(Object* child);
+    virtual void onRequestChildDestroy(std::shared_ptr<Object> child);
 
     void disconnectAll();
 
 protected:
-    std::set<Object *> children;
+    std::set<std::shared_ptr<Object>> children;
 
 private:
-    Object *parent;
+    std::shared_ptr<Object> parent;
 
 };
 

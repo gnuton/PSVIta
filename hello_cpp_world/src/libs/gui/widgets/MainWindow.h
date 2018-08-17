@@ -21,15 +21,15 @@ public:
     virtual bool isWidget() const { return true; }
     virtual bool isWindow() const { return true; }
 
-    const View* getCentralWidget() const { return centralWidget; }
-    void setCentralWidget(View* centralWidget) {
+    const std::shared_ptr<View> getCentralWidget() const { return centralWidget; }
+    void setCentralWidget(std::shared_ptr<View>  centralWidget) {
         this->centralWidget = centralWidget;
-        centralWidget->setParent(this);
+        centralWidget->setParent(shared_from_this());
     }
 private:
-    StatusBar *statusBar;
-    View *centralWidget;
-    Background *background;
+    std::shared_ptr<StatusBar>  statusBar;
+    std::shared_ptr<View>       centralWidget;
+    std::shared_ptr<Background>     background;
 };
 
 #endif // MAINWINDOW_H

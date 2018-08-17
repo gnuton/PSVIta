@@ -3,18 +3,19 @@
 
 #include <utility>
 #include <stdexcept>
+#include <memory>
 
 template <class T>
 class Singleton{
 public:
     template <typename... Args>
-    static T* createInstance(Args... args){
+    static std::shared_ptr<T> createInstance(Args... args){
         if (!instance)
-            instance = new T(std::forward<Args>(args)...);
+            instance = std::make_shared<T>(new T(std::forward<Args>(args)...));
         return instance;
     }
 
-    static T* getInstance(){
+    static std::shared_ptr<T> getInstance(){
         if (!instance)
             throw std::runtime_error("Accessed singleton before that instance is created");
 
@@ -23,14 +24,13 @@ public:
 
 
     static void destroyInstance(){
-        delete instance;
         instance = nullptr;
     }
 
 private:
-    static T* instance;
+    static std::shared_ptr<T> instance;
 };
 
-template <class T> T*  Singleton<T>::instance = nullptr;
+template <class T> std::shared_ptr<T>  Singleton<T>::instance = nullptr;
 
 #endif

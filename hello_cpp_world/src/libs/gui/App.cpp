@@ -8,42 +8,43 @@
 #include "widgets/Activity.h"
 #include "utils/Logger.h"
 
-App::App():
-    logger(Logger::createInstance()),
-    pad(VitaPad::createInstance()),
-    touch(VitaTouch::createInstance())
+App::App()
 {
     vita2d_init();
     vita2d_set_clear_color(RGBA8(0x40, 0x40, 0x40, 0xFF));
+    Logger::createInstance();
+    VitaPad::createInstance();
+    VitaTouch::createInstance();
+    Activity::createInstance();
+
     //NOTE: Activity is a view and required pad and touch instances. Hence it must be instantiated after them
-    this->activity = Activity::createInstance();
-    this->logger->Debug("Initializing App");
+    Logger::getInstance()->Debug("Initializing App");
 }
 
 App::~App(){
-    this->logger->Debug( "Destroying App");
+    Logger::getInstance()->Debug( "Destroying App");
 
     //TODO Delete should be automatically handled by the object tree. for this to happen App and everything else should be an object
-    this->activity->destroyInstance();
-    this->touch->destroyInstance();
-    this->pad->destroyInstance();
-    this->logger->destroyInstance();
+    Activity::getInstance()->destroyInstance();
+    VitaTouch::getInstance()->destroyInstance();
+    VitaPad::getInstance()->destroyInstance();
+    Logger::getInstance()->destroyInstance();
 
     sceKernelExitProcess(0);
 }
 
 void App::run(){
-    this->logger->Debug("Starting main loop");
+    Logger::getInstance()->Debug("Starting main loop");
 
     while (1) {
         vita2d_start_drawing();
         vita2d_clear_screen();
 
-        pad->Read();
-        touch->readTouch();
+        VitaPad::getInstance()->Read();
+        VitaTouch::getInstance()->readTouch();
 
-        this->activity->handleInput();
-        this->activity->draw();
+        Activity::getInstance()->handleInput();
+        Activity::getInstance()->draw();
 
         vita2d_end_drawing();
         vita2d_swap_buffers();
@@ -52,14 +53,14 @@ void App::run(){
 }
 
 void App::AddWindow(std::shared_ptr<Window> window){
-    this->activity->addWindow(window);
+    Activity::getInstance()->addWindow(window);
 }
 
 void App::showSplashScreen(){
-    this->logger->Debug( "Showing splash screen");
+    Logger::getInstance()->Debug( "Showing splash screen");
 
-    auto splash = std::make_shared<Splash>(this->activity);
-    this->activity->addWindow(splash);
+    auto splash = std::make_shared<Splash>(Activity::getInstance());
+    Activity::getInstance()->addWindow(splash);
 }
 
 

@@ -20,7 +20,7 @@
 class Button : public View
 {
 public:
-    explicit Button(View* parent,
+    explicit Button(std::shared_ptr<Object> parent,
            const std::string& text = "",
            const Point& topLeft = Point(0,0),
            int height=0,
