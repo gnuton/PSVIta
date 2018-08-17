@@ -30,22 +30,40 @@ public:
     virtual bool isWidget() const = 0;
     virtual bool isWindow() const = 0;
 
-    virtual bool removeChild(Object* child) final;
-    virtual bool addChild(Object* child) final;
-
     virtual void destroy() final;
 
+    /**
+     * Signal emitted and catched only by the parent.
+     * The parent remove the child from its list and destroys it
+     */
+
     Signal<Object*> requestDestroy;
+
+    /**
+     * Signal emitted by the child object when it's destroying itself
+     */
     Signal<Object*> destroying;
 
+    /**
+     * This slots gets called when a child is asking to be destroyed
+     * @param child a pointer to the child be destroyed
+     */
     virtual void onRequestChildDestroy(Object* child);
 
+    /**
+     * Disconnect the slots connected to this instance signals
+     */
     void disconnectAll();
 
 protected:
     std::set<Object *> children;
 
 private:
+    bool removeChild(Object* child);
+    bool addChild(Object* child);
+
+
+    std::map<Object*, int> requestDestroyMap;
     Object *parent;
 
 };

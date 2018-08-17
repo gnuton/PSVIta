@@ -38,6 +38,7 @@ bool Object::addChild(Object* child) {
     if (!child)
         return false;
     this->children.insert(child);
+    child->disconnectAll();
     child->requestDestroy.connectMember(this, &Object::onRequestChildDestroy);
     return true;
 }
